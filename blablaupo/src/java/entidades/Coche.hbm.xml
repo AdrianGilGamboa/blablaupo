@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-abr-2021 19:53:43 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Coche" table="coche" catalog="blablaupo" optimistic-lock="version">
+        <id name="matricula" type="string">
+            <column name="MATRICULA" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuarios" class="entidades.Usuarios" fetch="select">
+            <column name="DNI_CONDUCTOR" length="20" not-null="true" />
+        </many-to-one>
+        <property name="color" type="string">
+            <column name="COLOR" not-null="true" />
+        </property>
+        <property name="modelo" type="string">
+            <column name="MODELO" not-null="true" />
+        </property>
+        <property name="marca" type="string">
+            <column name="MARCA" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

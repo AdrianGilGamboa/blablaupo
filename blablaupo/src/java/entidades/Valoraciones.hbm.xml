@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-abr-2021 19:53:43 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Valoraciones" table="valoraciones" catalog="blablaupo" optimistic-lock="version">
+        <id name="idValoracion" type="java.lang.Integer">
+            <column name="id_valoracion" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="reservas" class="entidades.Reservas" fetch="select">
+            <column name="ID_RESERVA" not-null="true" />
+        </many-to-one>
+        <property name="puntuacion" type="int">
+            <column name="PUNTUACION" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

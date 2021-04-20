@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-abr-2021 19:53:43 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Anuncios" table="anuncios" catalog="blablaupo" optimistic-lock="version">
+        <id name="idAnuncio" type="java.lang.Integer">
+            <column name="ID_ANUNCIO" />
+            <generator class="identity" />
+        </id>
+        <property name="coste" type="float">
+            <column name="COSTE" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="anunciante" type="string">
+            <column name="ANUNCIANTE" not-null="true" />
+        </property>
+        <property name="fechaInicio" type="timestamp">
+            <column name="FECHA_INICIO" length="19" not-null="true" />
+        </property>
+        <property name="fechaFin" type="timestamp">
+            <column name="FECHA_FIN" length="19" not-null="true" />
+        </property>
+        <property name="multimedia" type="string">
+            <column name="MULTIMEDIA" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

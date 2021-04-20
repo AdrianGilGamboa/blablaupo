@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-abr-2021 19:53:43 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Usuarios" table="usuarios" catalog="blablaupo" optimistic-lock="version">
+        <id name="dni" type="string">
+            <column name="DNI" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="APELLIDOS" not-null="true" />
+        </property>
+        <property name="telefono" type="int">
+            <column name="TELEFONO" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="TIPO" length="100" not-null="true" />
+        </property>
+        <set name="coches" table="coche" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DNI_CONDUCTOR" length="20" not-null="true" />
+            </key>
+            <one-to-many class="entidades.Coche" />
+        </set>
+        <set name="viajeses" table="viajes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DNI_CONDUCTOR" length="20" not-null="true" />
+            </key>
+            <one-to-many class="entidades.Viajes" />
+        </set>
+        <set name="reservases" table="reservas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DNI_PASAJERO" length="20" not-null="true" />
+            </key>
+            <one-to-many class="entidades.Reservas" />
+        </set>
+    </class>
+</hibernate-mapping>

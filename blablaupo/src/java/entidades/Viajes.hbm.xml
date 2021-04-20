@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-abr-2021 19:53:43 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Viajes" table="viajes" catalog="blablaupo" optimistic-lock="version">
+        <id name="idViaje" type="java.lang.Integer">
+            <column name="ID_VIAJE" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="seguros" class="entidades.Seguros" fetch="select">
+            <column name="ID_SEGURO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarios" class="entidades.Usuarios" fetch="select">
+            <column name="DNI_CONDUCTOR" length="20" not-null="true" />
+        </many-to-one>
+        <property name="horaSalida" type="timestamp">
+            <column name="HORA_SALIDA" length="19" not-null="true" />
+        </property>
+        <property name="horaLlegada" type="timestamp">
+            <column name="HORA_LLEGADA" length="19" not-null="true" />
+        </property>
+        <property name="origen" type="string">
+            <column name="ORIGEN" not-null="true" />
+        </property>
+        <property name="destino" type="string">
+            <column name="DESTINO" not-null="true" />
+        </property>
+        <property name="coste" type="float">
+            <column name="COSTE" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="numPasajeros" type="int">
+            <column name="NUM_PASAJEROS" not-null="true" />
+        </property>
+        <set name="reservases" table="reservas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_VIAJE" not-null="true" />
+            </key>
+            <one-to-many class="entidades.Reservas" />
+        </set>
+    </class>
+</hibernate-mapping>
