@@ -7,7 +7,7 @@
         <title>Registro</title>
     </head>
     <body>
-        <s:form name="registro" action="registrarUsuario">
+        <s:form name="Registro" action="registro">
             <s:textfield name="nombre" label="Nombre"></s:textfield>
             <s:textfield name="apellidos" label="Apellidos"></s:textfield>
             <s:textfield name="password" label="Contraseña"></s:textfield>
