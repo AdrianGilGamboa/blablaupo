@@ -16,7 +16,7 @@
         <action name="login">
             <result>/login.jsp</result>
         </action>
-        <action name="registro">
+        <action name="registro" class="action.usuario.registroAction">
             
         </action>
     </package>
