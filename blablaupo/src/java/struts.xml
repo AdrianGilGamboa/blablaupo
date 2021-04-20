@@ -8,13 +8,14 @@
         <action name="">
             <result type="chain">
                 <param name="actionName">login</param>
+                <param name="namespace">login</param>
             </result>
         </action>
     </package>
     
     <package name="loginPackage" extends="struts-default">
         <action name="login">
-            <result>/vistas/login.jsp</result>
+            <result>/vistas/GestionUsuario/login.jsp</result>
         </action>
         <action name="registro" class="action.usuario.registroAction">
             
