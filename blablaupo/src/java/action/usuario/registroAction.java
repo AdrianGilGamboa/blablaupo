@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package action;
+package action.usuario;
 
 import com.opensymphony.xwork2.ActionSupport;
 import entidades.Usuarios;
