@@ -1,8 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : 20-abr-2021, 20:05:09
-    Author     : manum
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>

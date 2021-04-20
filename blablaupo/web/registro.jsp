@@ -1,9 +1,3 @@
-<%-- 
-    Document   : registro
-    Created on : 20-abr-2021, 20:10:27
-    Author     : manum
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
