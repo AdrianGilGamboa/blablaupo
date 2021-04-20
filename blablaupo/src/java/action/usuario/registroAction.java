@@ -21,6 +21,7 @@ public class registroAction extends ActionSupport {
      private int telefono;
      private String email;
      private String password;
+     private String tipo;
     public registroAction() {
     }
     
