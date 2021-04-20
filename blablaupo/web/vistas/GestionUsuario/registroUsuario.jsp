@@ -14,7 +14,7 @@
             <s:textfield name="email" label="Email"></s:textfield>
             <s:textfield name="dni" label="DNI"></s:textfield>
             <s:textfield name="telefono" label="Telefono"></s:textfield>
-
+            
 
         </s:form>
     </body>
