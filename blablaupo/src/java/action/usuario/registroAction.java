@@ -6,13 +6,21 @@
 package action.usuario;
 
 import com.opensymphony.xwork2.ActionSupport;
+import entidades.Usuarios;
 
 /**
  *
  * @author manum
  */
 public class registroAction extends ActionSupport {
+    Usuarios usuario = new Usuarios();
     
+     private String dni;
+     private String nombre;
+     private String apellidos;
+     private int telefono;
+     private String email;
+     private String password;
     public registroAction() {
     }
     
