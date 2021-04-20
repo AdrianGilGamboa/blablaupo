@@ -98,6 +98,7 @@ public class registroAction extends ActionSupport {
         usuario.setTelefono(getTelefono());
         usuario.setApellidos(getApellidos());
         usuario.setPassword(getPassword());
+        //Falta llamar al dao y añadir al usuario en la base de datos
         return SUCCESS;
     }
     
