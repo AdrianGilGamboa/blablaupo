@@ -16,5 +16,8 @@
         <action name="login">
             <result>/login.jsp</result>
         </action>
+        <action name="registro">
+            
+        </action>
     </package>
 </struts>
