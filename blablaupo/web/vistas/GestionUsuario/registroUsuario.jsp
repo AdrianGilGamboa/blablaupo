@@ -15,7 +15,7 @@
             <s:textfield name="dni" label="DNI"></s:textfield>
             <s:textfield name="telefono" label="Telefono"></s:textfield>
             <s:radio name="tipo" label="¿Tienes coche?" list="{'True','False'}" value="False"></s:radio>
-
+            
         </s:form>
     </body>
 </html>
