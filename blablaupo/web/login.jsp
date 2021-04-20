@@ -13,9 +13,9 @@
     </head>
     <body>
         <s:form action="comprobarLogin" method="post">
-            <s:textfield name="username" label="Usuario"></s:textfield>
+            <s:textfield name="email" label="Email"></s:textfield>
             <s:password name="password" label="Contraseña"></s:password>
-            <s:submit name="aceptar" value="Aceptar"></s:submit>
+            <s:submit name="acceder" value="Acceder"></s:submit>
         </s:form>
     </body>
 </html>
