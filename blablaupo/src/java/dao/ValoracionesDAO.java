@@ -1,5 +1,6 @@
 package dao;
 
+
 import entidades.*;
 import java.util.List;
 import org.hibernate.Query;
@@ -49,4 +50,6 @@ public class ValoracionesDAO {
         tx.commit();
     }  
     
+
+
 }

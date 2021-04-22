@@ -5,10 +5,14 @@
  */
 package dao;
 
+import org.hibernate.Session;
+
 /**
  *
  * @author adrii_gil99
  */
 public class CuponesDAO {
     
+        Session sesion = null;
+
 }

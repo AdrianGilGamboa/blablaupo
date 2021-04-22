@@ -42,10 +42,12 @@ public class SegurosDAO {
         tx.commit();
     }
     
+
     public void delete(Seguros s){
         sesion=HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx=sesion.beginTransaction();
         sesion.delete(s);
         tx.commit();
     }
+
 }

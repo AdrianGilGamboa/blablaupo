@@ -1,11 +1,13 @@
 
 package dao;
 
+
 import entidades.Viajes;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 
 
 public class ViajesDAO {
@@ -51,4 +53,5 @@ public class ViajesDAO {
     }  
     
     
+
 }

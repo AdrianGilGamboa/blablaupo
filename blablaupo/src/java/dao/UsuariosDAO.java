@@ -1,5 +1,6 @@
 package dao;
 
+
 import entidades.*;
 import java.util.List;
 import org.hibernate.Query;
@@ -48,4 +49,5 @@ public class UsuariosDAO {
         sesion.delete(u);
         tx.commit();
     }
+
 }
