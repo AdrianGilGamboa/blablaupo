@@ -15,6 +15,7 @@ h2{
 }
 .text-info {
     color: black;
+    font-size: 300%;
 }
 body {
     margin: 0;
@@ -24,7 +25,7 @@ body {
     line-height: 1.5;
     color: black;
     text-align: left;
-    background-color: #ddd7c8;
+    background-color: antiquewhite;
 }
 
 
@@ -90,25 +91,25 @@ p {
 }
 
 form {
-    border-top: 2px solid #ddd7c8;
     background-color: #fff;
     max-width: 500px;
     margin: auto;
     padding: 40px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.075);
+    box-shadow: 0px 0px 10px 4px #0e3f70;
 }
 
 label {
     display: inline-block;
     margin-bottom: .5rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #ddd7c8;
     outline: 0;
-    box-shadow: 0 0 0 .2rem #ddd7c8;
+    box-shadow: 0 0 0 .2rem #0e3f70;
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -119,8 +120,8 @@ label {
 
 .form-control {
     display: block;
-    width: 100%;
-    height: calc(1.5em + .75rem + 2px);
+    width: 95%;
+    height: 25px;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -164,7 +165,7 @@ html {
 
 .btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
     color: #fff;
-    background-color: #ddd7c8;
+    background-color: #ffbe49;
     border-color: #ddd7c8;
 }
 
@@ -206,7 +207,7 @@ button:focus {
 
 .btn {
     display: inline-block;
-    font-weight: 400;
+    font-weight: bold;
     color: #212529;
     text-align: center;
     vertical-align: middle;
@@ -259,6 +260,7 @@ button {
 label {
     display: inline-block;
     margin-bottom: .5rem;
+    width: 100%;
 }
 
 .radio{

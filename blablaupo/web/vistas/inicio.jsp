@@ -12,6 +12,15 @@
         <body>
         <s:include value="header.jsp"></s:include> 
             <h1>Hello World!</h1>
+            <h1>Hello World!</h1>
+            <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
+            <h1>Hello World!</h1>
+            <h1>Hello World!</h1>
+            <h1>Hello World!</h1>
+            <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
+            
+            
+            
         <s:include value="footer.jsp"></s:include> 
     </body>
 </html>
