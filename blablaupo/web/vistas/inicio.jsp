@@ -10,17 +10,19 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons%22%3E">
         </head>
         <body>
-        <s:include value="header.jsp"></s:include> 
-            <h1>Hello World!</h1>
-            <h1>Hello World!</h1>
+        <s:include value="header.jsp"></s:include>
+        <div class="cuerpo">
+            <h1>1Hello World!</h1>
+            <h1>2Hello World!</h1>
             <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
             <h1>Hello World!</h1>
             <h1>Hello World!</h1>
             <h1>Hello World!</h1>
             <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
+            <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
             
             
-            
+       </div>     
         <s:include value="footer.jsp"></s:include> 
     </body>
 </html>

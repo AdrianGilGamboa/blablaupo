@@ -457,21 +457,34 @@ competicion{
     float: right;
 }
 
+.cuerpo{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
 /* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
 @media screen and (max-width: 1400px) {
     .topnav a, .topnav-right {
         float: none;
         display: block;
     }
-
-
-    @media screen and (max-width: 1400px) {
-        .topnav-centered {
-            width: 20%;
-        }
-
+    .topnav-centered {
+        width: 20%;
     }
-
-
-
+    .cuerpo{
+        margin-top: 330px; 
+    }
+    body{
+        width: 100%;
+    }
+    .topnav{
+        width: 100%;
+    }
 }
+
+
+
+
+
+
