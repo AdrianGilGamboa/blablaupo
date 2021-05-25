@@ -9,21 +9,43 @@ import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.UsuariosDAO;
 import entidades.Usuarios;
+import javax.servlet.http.HttpSession;
+import org.apache.struts2.ServletActionContext;
 
 /**
  *
  * @author manum
  */
 public class accionRegistro extends ActionSupport {
-      Usuarios usuario = new Usuarios();
+
+    public static final String COCHE = "coche";
+    Usuarios usuario = new Usuarios();
     UsuariosDAO dao = new UsuariosDAO();
-     private String dni;
-     private String nombre;
-     private String apellidos;
-     private int telefono;
-     private String email;
-     private String password;
-     private String tipo;
+    HttpSession session = ServletActionContext.getRequest().getSession(false);
+
+    private String dni;
+    private String nombre;
+    private String apellidos;
+    private int telefono;
+    private String email;
+    private String password;
+    private String tipo;
+
+    public UsuariosDAO getDao() {
+        return dao;
+    }
+
+    public void setDao(UsuariosDAO dao) {
+        this.dao = dao;
+    }
+
+    public HttpSession getSession() {
+        return session;
+    }
+
+    public void setSession(HttpSession session) {
+        this.session = session;
+    }
 
     public Usuarios getUsuario() {
         return usuario;
@@ -88,8 +110,8 @@ public class accionRegistro extends ActionSupport {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-     
-public String registro(){
+
+    public String registro() {
         usuario.setEmail(getEmail());
         usuario.setDni(getDni());
         usuario.setNombre(getNombre());
@@ -97,17 +119,22 @@ public String registro(){
         usuario.setApellidos(getApellidos());
         usuario.setPassword(getPassword());
         usuario.setTipo(getTipo());
-        dao.create(usuario);
-        //Falta llamar al dao y añadir al usuario en la base de datos
-        return SUCCESS;
-}
-    
-    public String execute() throws Exception {
-       return SUCCESS;
+        if (getTipo().equals("True")) {
+            dao.create(usuario);
+            session.setAttribute("dni", getDni());
+            return COCHE;
+        } else {
+            dao.create(usuario);
+            return SUCCESS;
+        }
+
     }
+
+    public String execute() throws Exception {
+        return SUCCESS;
+    }
+
     public accionRegistro() {
     }
-    
-   
-    
+
 }

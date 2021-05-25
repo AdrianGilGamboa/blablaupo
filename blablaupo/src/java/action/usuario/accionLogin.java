@@ -72,7 +72,7 @@ public class accionLogin extends ActionSupport {
            if(u== null)
             return ERROR;
            else{
-               session.setAttribute("usuario", u.getEmail());
+               session.setAttribute("usuario", u.getDni());
                return SUCCESS;
            }
     }

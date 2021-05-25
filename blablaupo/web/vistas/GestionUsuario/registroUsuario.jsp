@@ -12,7 +12,7 @@
                 <div class="block-heading">
                     <h2 class="text-info">Registro</h2>
                 </div>
-            <s:form name="Registro" action="registro" >
+            <s:form name="Registro" action="registroUsuario" >
                 <s:a href="login.jsp">Volver</s:a>
                 <div class="form-group">
                     <s:label value="Nombre"></s:label>
@@ -40,7 +40,7 @@
                     <s:label value="¿Tienes coche?"></s:label>
                         <div class="group-radio">
                         <s:radio name="tipo" list="{'True','False'}" value="False" cssClass="radio-form"></s:radio>     
-                        </div>            
+                        </div> 
                     </div>
                 <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
