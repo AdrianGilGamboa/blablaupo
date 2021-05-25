@@ -10,6 +10,7 @@ import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.UsuariosDAO;
 import entidades.Usuarios;
+import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 /**
@@ -21,6 +22,7 @@ public class accionLogin extends ActionSupport {
      private String password;
      private Usuarios u;
      private UsuariosDAO dao = new UsuariosDAO();
+     HttpSession session = ServletActionContext.getRequest().getSession(false);
 
     public Usuarios getU() {
         return u;
@@ -38,6 +40,13 @@ public class accionLogin extends ActionSupport {
         this.dao = dao;
     }
 
+    public HttpSession getSession() {
+        return session;
+    }
+
+    public void setSession(HttpSession session) {
+        this.session = session;
+    }
 
     public String getEmail() {
         return email;
@@ -58,14 +67,19 @@ public class accionLogin extends ActionSupport {
     
     public accionLogin() {
     }
-    
      public String login(){
          u = dao.comprobarLogin(this. getEmail(),this.getPassword());
            if(u== null)
             return ERROR;
            else{
+               session.setAttribute("usuario", u.getEmail());
                return SUCCESS;
            }
+    }
+      public String logout(){
+        session.invalidate();
+        return SUCCESS;
+        
     }
      
     public String execute() throws Exception {

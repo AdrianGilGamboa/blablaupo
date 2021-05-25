@@ -5,17 +5,44 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
-    </head>
-    <body>
-        <s:form name="Registro" action="registro">
-            <s:textfield name="nombre" label="Nombre"></s:textfield>
-            <s:textfield name="apellidos" label="Apellidos"></s:textfield>
-            <s:textfield name="password" label="Contraseña"></s:textfield>
-            <s:textfield name="email" label="Email"></s:textfield>
-            <s:textfield name="dni" label="DNI"></s:textfield>
-            <s:textfield name="telefono" label="Telefono"></s:textfield>
-            <s:radio name="tipo" label="¿Tienes coche?" list="{'True','False'}" value="False"></s:radio>
-            
-        </s:form>
+        <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
+        </head>
+        <body>
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Registro</h2>
+                </div>
+            <s:form name="Registro" action="registro" >
+                <div class="form-group">
+                    <s:label value="Nombre"></s:label>
+                    <s:textfield name="nombre" label="Nombre" cssClass="form-control"></s:textfield>
+                    </div>
+                    <div class="form-group">
+                    <s:label value="Apellidos"></s:label>
+                    <s:textfield name="apellidos" label="Apellidos" cssClass="form-control"></s:textfield>
+                    </div>
+                <s:label value="Contraseña"></s:label>
+                <s:textfield name="password" label="Contraseña" cssClass="form-control"></s:textfield>
+                    <div class="form-group">
+                    <s:label value="Email"></s:label>
+                    <s:textfield name="email" label="Email" cssClass="form-control"></s:textfield>
+                    </div>
+                    <div class="form-group">
+                    <s:label value="DNI"></s:label>
+                    <s:textfield name="dni" label="DNI" cssClass="form-control"></s:textfield>
+                    </div>
+                    <div class="form-group">
+                    <s:label value="Telefono"></s:label>
+                    <s:textfield name="telefono" label="Telefono" cssClass="form-control"></s:textfield>
+                    </div>
+                    <div class="form-group">
+                    <s:label value="¿Tienes coche?"></s:label>
+                        <div class="group-radio">
+                        <s:radio name="tipo" list="{'True','False'}" value="False" cssClass="radio-form"></s:radio>     
+                        </div>            
+                    </div>
+                <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
+            </s:form>
+        </div>
     </body>
 </html>
