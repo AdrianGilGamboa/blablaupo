@@ -45,7 +45,11 @@ Contributor(s):
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/blablaupo?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <mapping resource="entidades/Reservas.hbm.xml"/>
+     <property name="current_session_context_class">thread</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hbm2ddl.auto">update</property>
+     <mapping resource="entidades/Reservas.hbm.xml"/>
     <mapping resource="entidades/Viajes.hbm.xml"/>
     <mapping resource="entidades/Cupones.hbm.xml"/>
     <mapping resource="entidades/Usuarios.hbm.xml"/>

@@ -49,5 +49,12 @@ public class UsuariosDAO {
         sesion.delete(u);
         tx.commit();
     }
-
+     public Usuarios comprobarLogin(String email, String password){
+        sesion=HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx=sesion.beginTransaction();
+        Query q=sesion.createQuery("From Usuarios where email='"+email+"' and password='"+password+"'");
+        Usuarios u = (Usuarios)q.uniqueResult();
+        tx.commit();
+        return u;
+    }
 }
