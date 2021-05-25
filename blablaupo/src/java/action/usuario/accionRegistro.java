@@ -94,10 +94,14 @@ public String registro(){
         usuario.setDni(getDni());
         usuario.setNombre(getNombre());
         usuario.setTelefono(getTelefono());
-        usuario.setApellidos(getApellidos());
+        usuario.setApellidos(getApellidos());        
         usuario.setPassword(getPassword());
-        usuario.setTipo(getTipo());
+        if(getTipo().equals("Si"))
+            usuario.setTipo("True");
+        else
+            usuario.setTipo("False");
         dao.create(usuario);
+        
         //Falta llamar al dao y añadir al usuario en la base de datos
         return SUCCESS;
 }
