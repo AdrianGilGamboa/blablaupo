@@ -132,7 +132,7 @@ public class accionRegistro extends ActionSupport {
         }
 
     }
-}
+
     
 
     public String execute() throws Exception {
