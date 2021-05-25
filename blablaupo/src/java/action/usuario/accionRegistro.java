@@ -110,6 +110,8 @@ public class accionRegistro extends ActionSupport {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+     public accionRegistro() {
+    }
 
     public String registro() {
         usuario.setEmail(getEmail());
@@ -132,14 +134,13 @@ public class accionRegistro extends ActionSupport {
         }
 
     }
-}
+
     
 
     public String execute() throws Exception {
         return SUCCESS;
     }
 
-    public accionRegistro() {
-    }
+   
 
 }
