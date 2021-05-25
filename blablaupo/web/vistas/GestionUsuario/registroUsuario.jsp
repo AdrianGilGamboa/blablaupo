@@ -13,6 +13,7 @@
                     <h2 class="text-info">Registro</h2>
                 </div>
             <s:form name="Registro" action="registro" >
+                <s:a href="login.jsp">Volver</s:a>
                 <div class="form-group">
                     <s:label value="Nombre"></s:label>
                     <s:textfield name="nombre" label="Nombre" cssClass="form-control"></s:textfield>
@@ -22,7 +23,7 @@
                     <s:textfield name="apellidos" label="Apellidos" cssClass="form-control"></s:textfield>
                     </div>
                 <s:label value="Contraseña"></s:label>
-                <s:textfield name="password" label="Contraseña" cssClass="form-control"></s:textfield>
+                <s:password name="password" label="Contraseña" cssClass="form-control"></s:password>
                     <div class="form-group">
                     <s:label value="Email"></s:label>
                     <s:textfield name="email" label="Email" cssClass="form-control"></s:textfield>
@@ -32,7 +33,7 @@
                     <s:textfield name="dni" label="DNI" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
-                    <s:label value="Telefono"></s:label>
+                    <s:label value="Teléfono"></s:label>
                     <s:textfield name="telefono" label="Telefono" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
