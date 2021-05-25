@@ -10,7 +10,7 @@
             <!-- Centered link -->
             <div class="topnav-centered">
                 <s:a href="inicio.jsp" cssClass="img-header" cssStyle="padding:0;"><img src="logo.png" width="80%"/></s:a>
-            </div>
+                </div>
 
                 <!-- Left-aligned links (default) -->
             <s:a href="inicio.jsp">Viajes</s:a>
@@ -20,8 +20,13 @@
 
                 <!-- Right-aligned links -->
                 <div class="topnav-right">
-                    <a href="">Mi Perfil</a>
-                <s:a href="../vistas/GestionSeguro/verSeguros">Cerrar Sesión</s:a>
+                <s:a href="../vistas/GestionSeguro/verSeguros">Mi Perfil</s:a>
+                <s:a cssStyle="background-color:#ffbe49;" >
+                    <s:form>
+                        <s:submit value="Cerrar Sesión" cssClass="input-header"></s:submit>
+                    </s:form>
+                </s:a>
+
             </div>
 
         </div>

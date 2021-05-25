@@ -16,6 +16,16 @@ body{
     margin:0 auto;
 }
 
+.input-header{
+    background-color: #ffbe49;
+    color: black;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+}
+
+
+
 #footer .actions{
     padding-left:0;
 }
