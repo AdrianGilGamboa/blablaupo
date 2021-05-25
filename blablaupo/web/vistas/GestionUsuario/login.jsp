@@ -28,7 +28,10 @@
                     </div>
                 <s:submit name="acceder" value="Acceder" cssClass="btn btn-primary btn-block"></s:submit>
                     <p style="text-align: center; margin-top: 5%; margin-bottom: 0;">
-                    <s:text name="¿No tienes cuenta aún? "></s:text><s:a href="../vistas/GestionUsuario/registroUsuario.jsp">Regístrate</s:a>
+
+                    <s:text name="¿No tienes cuenta aún? "></s:text><s:a href="/blablaupo/vistas/GestionUsuario/registroUsuario.jsp">Regístrate</s:a>
+
+
                     </p>
             </s:form>
 
