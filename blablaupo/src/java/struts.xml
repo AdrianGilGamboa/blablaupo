@@ -25,9 +25,13 @@
         </action>
         <action name="registroUsuario" class="action.usuario.accionRegistro" method="registro">
             <result name="success">/vistas/GestionUsuario/login.jsp</result>
+            <result name="coche">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         </action>
         <action name="cerrarSesion" class="action.usuario.accionLogin" method="logout">
             <result name="success">/vistas/GestionUsuario/login.jsp</result>
+        </action>
+        <action name="registrarCoche" class="action.usuario.accionCoche" method="crearCoche">
+        <result name="success">/vistas/inicio.jsp</result>
         </action>
     </package>
 </struts>

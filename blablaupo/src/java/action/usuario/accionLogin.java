@@ -74,6 +74,7 @@ public class accionLogin extends ActionSupport {
            else{
                session.setAttribute("usuario", u.getEmail());
                session.setAttribute("logado", "si");
+               session.setAttribute("usuario", u.getDni());
                return SUCCESS;
            }
     }
@@ -87,5 +88,6 @@ public class accionLogin extends ActionSupport {
     public String execute() throws Exception {
         return SUCCESS;
     }
+
     
 }
