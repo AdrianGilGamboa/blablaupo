@@ -39,8 +39,8 @@
                     <div class="form-group">
                     <s:label value="¿Tienes coche?"></s:label>
                         <div class="group-radio">
-                        <s:radio name="tipo" list="{'True','False'}" value="False" cssClass="radio-form"></s:radio>     
-                        </div> 
+                        <s:radio name="tipo" list="{'Si','No'}" value="False" cssClass="radio-form"></s:radio>     
+                        </div>            
                     </div>
                 <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>

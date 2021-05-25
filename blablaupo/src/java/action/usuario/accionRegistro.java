@@ -116,19 +116,24 @@ public class accionRegistro extends ActionSupport {
         usuario.setDni(getDni());
         usuario.setNombre(getNombre());
         usuario.setTelefono(getTelefono());
-        usuario.setApellidos(getApellidos());
+        usuario.setApellidos(getApellidos());        
         usuario.setPassword(getPassword());
+
         usuario.setTipo(getTipo());
-        if (getTipo().equals("True")) {
+        if (getTipo().equals("Si")) {
+			usuario.setTipo("True");
             dao.create(usuario);
             session.setAttribute("dni", getDni());
             return COCHE;
         } else {
+			 usuario.setTipo("False");
             dao.create(usuario);
             return SUCCESS;
         }
 
     }
+}
+    
 
     public String execute() throws Exception {
         return SUCCESS;
