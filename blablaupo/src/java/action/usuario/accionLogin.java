@@ -73,9 +73,11 @@ public class accionLogin extends ActionSupport {
             return ERROR;
            else{
                session.setAttribute("usuario", u.getEmail());
+               session.setAttribute("logado", "si");
                return SUCCESS;
            }
     }
+     
       public String logout(){
         session.invalidate();
         return SUCCESS;
