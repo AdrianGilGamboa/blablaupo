@@ -9,7 +9,7 @@
 
             <!-- Centered link -->
             <div class="topnav-centered">
-                <s:a href="inicio.jsp" cssClass="img-header" cssStyle="padding:0;"><img src="logo.png" width="80%"/></s:a>
+                <s:a href="inicio.jsp" cssClass="img-header" cssStyle="padding:0;"><img src="/blablaupo/vistas/logo.png" width="80%"/></s:a>
             </div>
 
                 <!-- Left-aligned links (default) -->
