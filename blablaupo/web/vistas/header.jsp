@@ -15,8 +15,8 @@
                 <!-- Left-aligned links (default) -->
             <s:a href="inicio.jsp">Viajes</s:a>
             <s:a href="../vistas/GestionCupon/verCupones.jsp">Cupones</s:a>
-            <s:a href="../vistas/GestionAnuncio/verAnuncios">Anuncios</s:a>
-            <s:a href="../vistas/GestionSeguro/verSeguros">Seguros</s:a>
+            <s:a href="../vistas/GestionAnuncio/verAnuncios.jsp">Anuncios</s:a>
+            <s:a href="../vistas/GestionSeguro/verSeguros.jsp">Seguros</s:a>
 
                 <!-- Right-aligned links -->
                 <div class="topnav-right">
