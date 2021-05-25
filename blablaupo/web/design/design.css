@@ -103,6 +103,7 @@ label {
     margin-bottom: .5rem;
     text-align: center;
     font-weight: bold;
+    margin-top: 2%;
 }
 
 .form-control:focus {
@@ -110,6 +111,25 @@ label {
     background-color: #fff;
     outline: 0;
     box-shadow: 0 0 0 .2rem #0e3f70;
+}
+
+.cuadro{
+    padding-top: 50%;
+}
+
+.radio-form {
+    align-content: center;
+    text-align: center;
+    display: initial;
+    margin-bottom: .5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2%;
+    margin: 5%;
+}
+
+.group-radio{
+    padding-left: 19%;
 }
 
 @media (prefers-reduced-motion:reduce) {
