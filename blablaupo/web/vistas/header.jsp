@@ -21,7 +21,11 @@
                 <!-- Right-aligned links -->
                 <div class="topnav-right">
                     <a href="">Mi Perfil</a>
-                <s:a href="../vistas/GestionSeguro/verSeguros">Cerrar Sesión</s:a>
+                <s:a>
+                        <form action="cerrarSesion" method="post">
+                      <s:submit name="salir" value="Cerrar Sesion" cssClass="btn btn-primary btn-block"></s:submit>
+                    </form>
+                </s:a>
             </div>
 
         </div>
