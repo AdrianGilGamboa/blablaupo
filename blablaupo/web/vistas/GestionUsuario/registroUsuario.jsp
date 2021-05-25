@@ -12,7 +12,7 @@
                 <div class="block-heading">
                     <h2 class="text-info">Registro</h2>
                 </div>
-            <s:form name="Registro" action="registro" >
+            <s:form name="Registro" action="registroUsuario" >
                 <div class="form-group">
                     <s:label value="Nombre"></s:label>
                     <s:textfield name="nombre" label="Nombre" cssClass="form-control"></s:textfield>

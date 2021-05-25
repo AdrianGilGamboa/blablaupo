@@ -18,12 +18,13 @@
          <action name="Login">
             <result>/vistas/GestionUsuario/login.jsp</result>
         </action>
+        
         <action name="comprobarLogin" class="action.usuario.accionLogin" method="login">
             <result name="success">/vistas/inicio.jsp</result>
             <result name="error">/vistas/GestionUsuario/login.jsp</result>
         </action>
-        <action name="registro" class="action.usuario.registroAction">
-            <result>/vista/GestionUsuario/registroUsuario.jsp</result>
+        <action name="registroUsuario" class="action.usuario.accionRegistro" method="registro">
+            <result name="success">/vistas/GestionUsuario/login.jsp</result>
         </action>
         <action name="cerrarSesion" class="action.usuario.accionLogin" method="logout">
             <result name="success">/vistas/GestionUsuario/login.jsp</result>
