@@ -7,16 +7,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registro</title>
+         <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-         <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info">Registro</h2>
-                </div>
-         <s:form name="RegistroCoche" action="registrarCoche" >
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Registra tu coche</h2>
+            </div>
+            <s:form name="RegistroCoche" action="registrarCoche" >
                 <s:a href="login.jsp">Volver</s:a>
-                <div class="form-group">
+                    <div class="form-group">
                     <s:label value="Matricula"></s:label>
                     <s:textfield name="matricula" label="Matricula" cssClass="form-control"></s:textfield>
                     </div>
@@ -30,8 +31,10 @@
                     <s:label value="Marca"></s:label>
                     <s:textfield name="marca" label="Marca" cssClass="form-control"></s:textfield>
                     </div>
-                        Dni del conductor: <s:property value="#session.dni"></s:property>
+                    Dni del conductor: <s:property value="#session.dni"></s:property>
                 <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
+        </div>
+
     </body>
 </html>
