@@ -8,15 +8,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
-         <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <div class="container">
-            <div class="block-heading">
-                <h2 class="text-info">Registra tu coche</h2>
-            </div>
+        <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
+        </head>
+        <body>
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Registra tu coche</h2>
+                </div>
             <s:form name="RegistroCoche" action="registrarCoche" >
-                <s:a href="login.jsp">Volver</s:a>
+                <s:a href="registroUsuario.jsp">Volver</s:a>
                     <div class="form-group">
                     <s:label value="Matricula"></s:label>
                     <s:textfield name="matricula" label="Matricula" cssClass="form-control"></s:textfield>
@@ -31,7 +31,11 @@
                     <s:label value="Marca"></s:label>
                     <s:textfield name="marca" label="Marca" cssClass="form-control"></s:textfield>
                     </div>
-                    Dni del conductor: <s:property value="#session.dni"></s:property>
+                    <div class="form-group">
+                    <s:label value="Dni del conductor: "></s:label> 
+                    <s:textfield value="%{#session.dni}"  cssClass="form-control" readonly="true"></s:textfield>
+                    </div>
+
                 <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
         </div>
