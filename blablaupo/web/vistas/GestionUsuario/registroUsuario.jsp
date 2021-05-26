@@ -4,6 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <s:head/>
         <title>Registro</title>
         <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
         </head>

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package action.usuario;
 
 import static com.opensymphony.xwork2.Action.SUCCESS;
@@ -12,10 +8,7 @@ import entidades.Usuarios;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-/**
- *
- * @author manum
- */
+
 public class accionRegistro extends ActionSupport {
 
     public static final String COCHE = "coche";
@@ -135,6 +128,33 @@ public class accionRegistro extends ActionSupport {
         }
 
     }
+
+    
+      public void validate() {      
+          System.out.println("EL TIPOOOOOOOOOOOOOOOOOOO: "+this.getTelefono());
+        if (this.getNombre().equals("")){
+            addFieldError("nombre", "nombre is required.");
+        }
+        
+        if(this.getApellidos().length() == 0){
+            addFieldError("apellidos", "pass is required.");
+        }
+        if(this.getPassword().length() == 0){
+            addFieldError("password", "pass is required.");
+        }
+        if(this.getEmail().length() == 0){
+            addFieldError("email", "pass is required.");
+        }
+        if(this.getDni().length() == 0){
+            addFieldError("dni", "pass is required.");
+        }
+        if(this.getTelefono()== 0){
+            addFieldError("telefono", "telefono is required.");
+        }
+        if(this.getTipo() == null){            
+            addFieldError("tipo", "telefono is required.");
+        }   
+     }
 
     public String execute() throws Exception {
         return SUCCESS;

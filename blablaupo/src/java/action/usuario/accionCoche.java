@@ -110,4 +110,22 @@ public class accionCoche extends ActionSupport {
         return SUCCESS;
     }
     
+    public void validate() {      
+        if (this.getMatricula().equals("")){
+            addFieldError("matricula", "Matricula is required.");
+        }
+        
+        if(this.getMarca().equals("")){
+            addFieldError("color", "Matricula is required.");
+        }
+        
+        if(this.getColor().equals("")){
+            addFieldError("marca", "Matricula is required.");
+        }
+        
+        if(this.getModelo().equals("")){
+            addFieldError("modelo", "Matricula is required.");
+        }
+     }
+    
 }
