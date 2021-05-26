@@ -10,6 +10,10 @@
         <title>JSP Page</title>
     </head>
     <body>
+         <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Registro</h2>
+                </div>
          <s:form name="RegistroCoche" action="registrarCoche" >
                 <s:a href="login.jsp">Volver</s:a>
                 <div class="form-group">
@@ -26,7 +30,7 @@
                     <s:label value="Marca"></s:label>
                     <s:textfield name="marca" label="Marca" cssClass="form-control"></s:textfield>
                     </div>
-                    <s:textfield name="dniConductor" label="Dni: "cssClass="form-control"></s:textfield>
+                        Dni del conductor: <s:property value="#session.dni"></s:property>
                 <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
     </body>
