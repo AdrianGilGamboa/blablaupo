@@ -14,7 +14,7 @@
                 </div>
             <s:form name="Registro" action="registroUsuario" >
                 <s:a href="login.jsp">Volver</s:a>
-                <div class="form-group">
+                    <div class="form-group">
                     <s:label value="Nombre"></s:label>
                     <s:textfield name="nombre" label="Nombre" cssClass="form-control"></s:textfield>
                     </div>
@@ -44,6 +44,9 @@
                     </div>
                 <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
+        </div>
+        <div class="container" style="margin-top: 3%">
+            <img src="/blablaupo/vistas/logo.png" width="100%"/>
         </div>
     </body>
 </html>

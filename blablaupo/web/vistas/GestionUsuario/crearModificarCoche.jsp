@@ -33,12 +33,14 @@
                     </div>
                     <div class="form-group">
                     <s:label value="Dni del conductor: "></s:label> 
-                    <s:textfield value="%{#session.dni}"  cssClass="form-control" readonly="true"></s:textfield>
+                    <s:textfield value="%{#session.usuario.dni}"  cssClass="form-control" readonly="true"></s:textfield>
                     </div>
 
                 <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
         </div>
-
+        <div class="container" style="margin-top: 3%">
+            <img src="/blablaupo/vistas/logo.png" width="100%"/>
+        </div>
     </body>
 </html>

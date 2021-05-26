@@ -96,12 +96,13 @@ public class accionCoche extends ActionSupport {
     }
     
     public String crearCoche(){
-        u = dao.read((String) session.getAttribute("dni"));
+        u = (Usuarios) session.getAttribute("usuario");
         c.setMatricula(getMatricula());
         c.setColor(getColor());
         c.setModelo(getModelo());
         c.setMarca(getMarca());
         c.setUsuarios(u);
+        dao.create(u);
         cocheDAO.create(c);
         return SUCCESS;
     }

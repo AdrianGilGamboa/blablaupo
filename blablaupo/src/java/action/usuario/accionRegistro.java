@@ -110,7 +110,8 @@ public class accionRegistro extends ActionSupport {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-     public accionRegistro() {
+
+    public accionRegistro() {
     }
 
     public String registro() {
@@ -118,29 +119,25 @@ public class accionRegistro extends ActionSupport {
         usuario.setDni(getDni());
         usuario.setNombre(getNombre());
         usuario.setTelefono(getTelefono());
-        usuario.setApellidos(getApellidos());        
+        usuario.setApellidos(getApellidos());
         usuario.setPassword(getPassword());
 
         usuario.setTipo(getTipo());
         if (getTipo().equals("Si")) {
-			usuario.setTipo("True");
-            dao.create(usuario);
-            session.setAttribute("dni", getDni());
+            usuario.setTipo("True");
+            //dao.create(usuario);
+            session.setAttribute("usuario", usuario);
             return COCHE;
         } else {
-			 usuario.setTipo("False");
+            usuario.setTipo("False");
             dao.create(usuario);
             return SUCCESS;
         }
 
     }
 
-    
-
     public String execute() throws Exception {
         return SUCCESS;
     }
-
-   
 
 }
