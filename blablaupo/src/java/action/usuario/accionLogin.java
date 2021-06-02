@@ -13,10 +13,7 @@ import entidades.Usuarios;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-/**
- *
- * @author manum
- */
+
 public class accionLogin extends ActionSupport {
     private String email;
      private String password;
@@ -72,17 +69,15 @@ public class accionLogin extends ActionSupport {
            if(u== null)
             return ERROR;
            else{
-               session.setAttribute("usuario", u.getEmail());
                session.setAttribute("logado", "si");
-               session.setAttribute("usuario", u.getDni());
+               session.setAttribute("usuario", u);
                return SUCCESS;
            }
     }
      
       public String logout(){
         session.invalidate();
-        return SUCCESS;
-        
+        return SUCCESS;   
     }
      
     public String execute() throws Exception {

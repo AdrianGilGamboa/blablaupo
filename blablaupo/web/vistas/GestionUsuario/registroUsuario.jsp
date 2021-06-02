@@ -14,8 +14,7 @@
                     <h2 class="text-info">Registro</h2>
                 </div>
             <s:form name="Registro" action="registroUsuario" >
-                <s:a href="login.jsp">Volver</s:a>
-                    <div class="form-group">
+                <div class="form-group">
                     <s:label value="Nombre"></s:label>
                     <s:textfield name="nombre" label="Nombre" cssClass="form-control"></s:textfield>
                     </div>
@@ -40,10 +39,13 @@
                     <div class="form-group">
                     <s:label value="¿Tienes coche?"></s:label>
                         <div class="group-radio">
-                        <s:radio name="tipo" list="{'Si','No'}" value="False" cssClass="radio-form"></s:radio>     
+                        <s:radio name="tipo" list="{'Si','No'}" cssClass="radio-form"></s:radio>     
                         </div>            
                     </div>
                 <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
+                    <p style="text-align: center; margin-top: 5%; margin-bottom: 0;">
+                    <s:text name="¿? "></s:text><s:a href="login.jsp">Iniciar Sesión</s:a>
+                    </p>
             </s:form>
         </div>
         <div class="container" style="margin-top: 3%">

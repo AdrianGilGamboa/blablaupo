@@ -15,7 +15,7 @@
     <body>
         <div class="container">
             <div class="block-heading">
-                <h2 class="text-info">Inicar Sesión</h2>
+                <h2 class="text-info">Iniciar Sesión</h2>
             </div>
             <s:form action="comprobarLogin" method="post">
                 <div class="form-group">
@@ -28,10 +28,7 @@
                     </div>
                 <s:submit name="acceder" value="Acceder" cssClass="btn btn-primary btn-block"></s:submit>
                     <p style="text-align: center; margin-top: 5%; margin-bottom: 0;">
-
                     <s:text name="¿No tienes cuenta aún? "></s:text><s:a href="/blablaupo/vistas/GestionUsuario/registroUsuario.jsp">Regístrate</s:a>
-
-
                     </p>
             </s:form>
 

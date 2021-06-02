@@ -1,13 +1,12 @@
-
 package action.usuario;
 
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.UsuariosDAO;
+import entidades.Coche;
 import entidades.Usuarios;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
-
 
 public class accionRegistro extends ActionSupport {
 
@@ -16,6 +15,8 @@ public class accionRegistro extends ActionSupport {
     UsuariosDAO dao = new UsuariosDAO();
     HttpSession session = ServletActionContext.getRequest().getSession(false);
 
+    
+
     private String dni;
     private String nombre;
     private String apellidos;
@@ -23,6 +24,16 @@ public class accionRegistro extends ActionSupport {
     private String email;
     private String password;
     private String tipo;
+
+    private String passwordNueva;
+
+    public String getPasswordNueva() {
+        return passwordNueva;
+    }
+
+    public void setPasswordNueva(String passwordNueva) {
+        this.passwordNueva = passwordNueva;
+    }
 
     public UsuariosDAO getDao() {
         return dao;
@@ -114,48 +125,66 @@ public class accionRegistro extends ActionSupport {
         usuario.setTelefono(getTelefono());
         usuario.setApellidos(getApellidos());
         usuario.setPassword(getPassword());
-
         usuario.setTipo(getTipo());
         if (getTipo().equals("Si")) {
-            usuario.setTipo("True");
-            //dao.create(usuario);
-            session.setAttribute("usuario", usuario);
             return COCHE;
         } else {
-            usuario.setTipo("False");
             dao.create(usuario);
             return SUCCESS;
         }
 
     }
 
-    
-      public void validate() {      
-          System.out.println("EL TIPOOOOOOOOOOOOOOOOOOO: "+this.getTelefono());
-        if (this.getNombre().equals("")){
+    public String modificar() {
+        usuario = (Usuarios) session.getAttribute("usuario");
+        if (usuario.getPassword().equals(this.getPassword())) {
+            usuario.setTelefono(getTelefono());
+            if (getPasswordNueva().length()!=0) {
+                usuario.setPassword(getPasswordNueva());
+            }
+            if (!usuario.getTipo().equals(this.getTipo())) {
+                if (getTipo().equals("Si")) {
+                    usuario.setTipo("Si");
+                    dao.update(usuario);
+                    return COCHE;
+                } else {
+                    usuario.setTipo("No");
+                    usuario.getCoches();
+                }
+            }
+            dao.update(usuario);
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
+
+    }
+
+    /*public void validate() {
+        System.out.println("EL TIPOOOOOOOOOOOOOOOOOOO: " + this.getTelefono());
+        if (this.getNombre().equals("")) {
             addFieldError("nombre", "nombre is required.");
         }
-        
-        if(this.getApellidos().length() == 0){
+
+        if (this.getApellidos().length() == 0) {
             addFieldError("apellidos", "pass is required.");
         }
-        if(this.getPassword().length() == 0){
+        if (this.getPassword().length() == 0) {
             addFieldError("password", "pass is required.");
         }
-        if(this.getEmail().length() == 0){
+        if (this.getEmail().length() == 0) {
             addFieldError("email", "pass is required.");
         }
-        if(this.getDni().length() == 0){
+        if (this.getDni().length() == 0) {
             addFieldError("dni", "pass is required.");
         }
-        if(this.getTelefono()== 0){
+        if (this.getTelefono() == 0) {
             addFieldError("telefono", "telefono is required.");
         }
-        if(this.getTipo() == null){            
+        if (this.getTipo() == null) {
             addFieldError("tipo", "telefono is required.");
-        }   
-     }
-
+        }
+    }*/
     public String execute() throws Exception {
         return SUCCESS;
     }
