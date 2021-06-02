@@ -16,7 +16,7 @@
                     <h2 class="text-info">Pon tu anuncio</h2>
                 </div>
             <s:form name="RegistroAnuncio" action="registrarAnuncio" >
-                <s:a href="inicio.jsp">Volver</s:a>
+                <s:a href="/blablaupo/vistas/inicio.jsp">Volver</s:a>
                     <div class="form-group">
                     <s:label value="Coste"></s:label>
                     <s:textfield name="coste" label="Coste" cssClass="form-control"></s:textfield>

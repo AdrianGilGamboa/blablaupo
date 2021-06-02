@@ -29,8 +29,7 @@ public class accionAnuncio extends ActionSupport {
     private Date fechaInicio;
     private Date fechaFin;
     private HttpSession session = ServletActionContext.getRequest().getSession(false);
-    private AnunciosDAO anuncioDAO;
-    private Anuncios anuncio = new Anuncios();
+    private AnunciosDAO anuncioDAO = new AnunciosDAO();
     private String multimedia;
     private String fotoPerfilContentType;
     private String fotoPerfilFileName;
@@ -62,14 +61,6 @@ public class accionAnuncio extends ActionSupport {
     }
 
     
-    public Anuncios getAnuncio() {
-        return anuncio;
-    }
-
-    public void setAnuncio(Anuncios anuncio) {
-        this.anuncio = anuncio;
-    }
-
     public float getCoste() {
         return coste;
     }
@@ -109,21 +100,16 @@ public class accionAnuncio extends ActionSupport {
         this.session = session;
     }
 
-    public AnunciosDAO getAnuncioDAO() {
-        return anuncioDAO;
-    }
-
-    public void setAnuncioDAO(AnunciosDAO anuncioDAO) {
-        this.anuncioDAO = anuncioDAO;
-    }
+   
 
     public accionAnuncio() {
     }
 
-    public String crearAnuncio() throws ParseException, IOException, java.text.ParseException {
-        
+    public String crearAnuncio() throws ParseException,  java.text.ParseException {
+        Anuncios anuncio = new Anuncios();
+      
         anuncio.setCoste(getCoste());
-        SimpleDateFormat parseador = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
         anuncio.setFechaInicio(parseador.parse(parseador.format(getFechaInicio())));
         anuncio.setFechaFin(parseador.parse(parseador.format(getFechaFin())));
         anuncio.setAnunciante(getAnunciante());

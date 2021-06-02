@@ -43,7 +43,7 @@
     <package name="anuncioPackage" extends="struts-default">
          <action name="registrarAnuncio" class="action.usuario.accionAnuncio" method="crearAnuncio">
             <result name="success">/vistas/inicio.jsp</result>
-            <result name="input">/vistas/inicio.jsp</result>
+            
         </action>
     </package>
 </struts>
