@@ -37,6 +37,14 @@
         <result name="input">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         <result name="error">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         </action>
+       
+    </package>
+    
+    <package name="anuncioPackage" extends="struts-default">
+         <action name="registrarAnuncio" class="action.usuario.accionAnuncio" method="crearAnuncio">
+            <result name="success">/vistas/inicio.jsp</result>
+            
+        </action>
     </package>
     
     
