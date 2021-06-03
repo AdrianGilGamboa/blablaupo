@@ -16,7 +16,6 @@
                     <h2 class="text-info">Registra tu coche</h2>
                 </div>
             <s:form name="RegistroCoche" action="registrarCoche" >
-                <s:a href="registroUsuario.jsp">Volver</s:a>
                     <div class="form-group">
                     <s:label value="Matricula"></s:label>
                     <s:textfield name="matricula" label="Matricula" cssClass="form-control"></s:textfield>

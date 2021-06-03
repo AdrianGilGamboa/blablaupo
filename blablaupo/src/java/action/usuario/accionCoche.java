@@ -102,7 +102,6 @@ public class accionCoche extends ActionSupport {
         c.setModelo(getModelo());
         c.setMarca(getMarca());
         c.setUsuarios(u);
-        dao.create(u);
         cocheDAO.create(c);
         return SUCCESS;
     }

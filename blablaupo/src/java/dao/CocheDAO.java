@@ -50,4 +50,13 @@ public class CocheDAO {
         tx.commit();
         return listaCoches;
     }
+    
+        public Coche readDniUsuario(String pk) {
+        sesion = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("from Coche where dni_conductor='" + pk + "'");
+        Coche a = (Coche) q.uniqueResult();
+        tx.commit();
+        return a;
+    }
 }

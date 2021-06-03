@@ -13,13 +13,13 @@ import entidades.Usuarios;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-
 public class accionLogin extends ActionSupport {
+
     private String email;
-     private String password;
-     private Usuarios u;
-     private UsuariosDAO dao = new UsuariosDAO();
-     HttpSession session = ServletActionContext.getRequest().getSession(false);
+    private String password;
+    private Usuarios u;
+    private UsuariosDAO dao = new UsuariosDAO();
+    HttpSession session = ServletActionContext.getRequest().getSession(false);
 
     public Usuarios getU() {
         return u;
@@ -60,39 +60,39 @@ public class accionLogin extends ActionSupport {
     public void setPassword(String password) {
         this.password = password;
     }
-     
-    
+
     public accionLogin() {
     }
-     public String login(){
-         u = dao.comprobarLogin(this. getEmail(),this.getPassword());
-           if(u== null){
-            addFieldError("login", getText("login"));                  
+
+    public String login() {
+        u = dao.comprobarLogin(this.getEmail(), this.getPassword());
+        if (u == null) {
+            addFieldError("login", getText("login"));
             return ERROR;
-           else{
+        }
+            else{
                session.setAttribute("logado", "si");
                session.setAttribute("usuario", u);
                return SUCCESS;
            }
+        
     }
-     
-      public String logout(){
+
+    public String logout() {
         session.invalidate();
-        return SUCCESS;   
+        return SUCCESS;
     }
-     
+
     public String execute() throws Exception {
         return SUCCESS;
     }
-    
-    public void validate() { 
-        if (this.getEmail().equals("")){
+
+    public void validate() {
+        if (this.getEmail().equals("")) {
             addFieldError("email", getText("email"));
         }
-        if (this.getPassword().equals("")){
+        if (this.getPassword().equals("")) {
             addFieldError("password", getText("password"));
         }
     }
-
-    
 }

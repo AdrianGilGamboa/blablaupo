@@ -2,9 +2,12 @@ package action.usuario;
 
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import dao.CocheDAO;
 import dao.UsuariosDAO;
 import entidades.Coche;
 import entidades.Usuarios;
+import java.util.List;
+import java.util.Set;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
@@ -14,8 +17,6 @@ public class accionRegistro extends ActionSupport {
     Usuarios usuario = new Usuarios();
     UsuariosDAO dao = new UsuariosDAO();
     HttpSession session = ServletActionContext.getRequest().getSession(false);
-
-    
 
     private String dni;
     private String nombre;
@@ -127,6 +128,7 @@ public class accionRegistro extends ActionSupport {
         usuario.setPassword(getPassword());
         usuario.setTipo(getTipo());
         if (getTipo().equals("Si")) {
+            dao.create(usuario);
             return COCHE;
         } else {
             dao.create(usuario);
@@ -135,30 +137,7 @@ public class accionRegistro extends ActionSupport {
 
     }
 
-    public String modificar() {
-        usuario = (Usuarios) session.getAttribute("usuario");
-        if (usuario.getPassword().equals(this.getPassword())) {
-            usuario.setTelefono(getTelefono());
-            if (getPasswordNueva().length()!=0) {
-                usuario.setPassword(getPasswordNueva());
-            }
-            if (!usuario.getTipo().equals(this.getTipo())) {
-                if (getTipo().equals("Si")) {
-                    usuario.setTipo("Si");
-                    dao.update(usuario);
-                    return COCHE;
-                } else {
-                    usuario.setTipo("No");
-                    usuario.getCoches();
-                }
-            }
-            dao.update(usuario);
-            return SUCCESS;
-        } else {
-            return ERROR;
-        }
-
-    }
+    
 
     /*public void validate() {
         System.out.println("EL TIPOOOOOOOOOOOOOOOOOOO: " + this.getTelefono());
