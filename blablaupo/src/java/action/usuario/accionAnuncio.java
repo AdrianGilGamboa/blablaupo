@@ -13,7 +13,9 @@ import freemarker.core.ParseException;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
@@ -23,7 +25,7 @@ import org.apache.struts2.ServletActionContext;
  */
 public class accionAnuncio extends ActionSupport {
 
-
+    private int id;
     private float coste;
     private String anunciante;
     private Date fechaInicio;
@@ -33,7 +35,36 @@ public class accionAnuncio extends ActionSupport {
     private String multimedia;
     private String fotoPerfilContentType;
     private String fotoPerfilFileName;
+    private List<Anuncios> lista = new ArrayList();
 
+
+    public AnunciosDAO getAnuncioDAO() {
+        return anuncioDAO;
+    }
+
+    public void setAnuncioDAO(AnunciosDAO anuncioDAO) {
+        this.anuncioDAO = anuncioDAO;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+    
+    public List getLista() {
+        return lista;
+    }
+
+    public void setLista(List lista) {
+        this.lista = lista;
+    }
+    
+    
     public String getMultimedia() {
         return multimedia;
     }
@@ -107,7 +138,6 @@ public class accionAnuncio extends ActionSupport {
 
     public String crearAnuncio() throws ParseException,  java.text.ParseException {
         Anuncios anuncio = new Anuncios();
-      
         anuncio.setCoste(getCoste());
         SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
         anuncio.setFechaInicio(parseador.parse(parseador.format(getFechaInicio())));
@@ -115,6 +145,15 @@ public class accionAnuncio extends ActionSupport {
         anuncio.setAnunciante(getAnunciante());
         anuncio.setMultimedia(getMultimedia());
         anuncioDAO.create(anuncio);
+        lista = anuncioDAO.list();
+        return SUCCESS;
+    }
+    public String verAnuncio(){
+                Anuncios anuncio = new Anuncios();
+        coste = getCoste();
+        System.out.println("Probando el action");
+        lista = anuncioDAO.list();
+        session.setAttribute("lista", lista);
         return SUCCESS;
     }
 

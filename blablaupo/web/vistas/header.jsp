@@ -15,7 +15,7 @@
                 <!-- Left-aligned links (default) -->
             <s:a href="inicio.jsp">Viajes</s:a>
             <s:a href="/blablaupo/vistas/GestionCupon/verCupones.jsp">Cupones</s:a>
-            <s:a href="/blablaupo/vistas/GestionAnuncio/crearAnuncio.jsp">Anuncios</s:a>
+            <s:a href="/blablaupo/vistas/GestionAnuncio/verAnuncios.jsp">Anuncios</s:a>
             <s:a href="/blablaupo/vistas/GestionSeguro/verSeguros.jsp">Seguros</s:a>
 
                 <!-- Right-aligned links -->
