@@ -41,10 +41,16 @@
     </package>
     
     <package name="anuncioPackage" extends="struts-default">
-         <action name="registrarAnuncio" class="action.usuario.accionAnuncio" method="crearAnuncio">
+         <action name="registrarAnuncio" class="action.anuncio.accionAnuncio" method="crearAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
-        <action name="verAnuncio" class="action.usuario.accionAnuncio" method="verAnuncio">
+        <action name="verAnuncio" class="action.anuncio.verAnuncio" method="verAnuncio">
+            <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
+        </action>
+       <action name="borrarAnuncio" class="action.anuncio.accionAnuncio" method="borrarAnuncio">
+            <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
+        </action>
+        <action name="modificarAnuncio" class="action.anuncio.modificarAnuncio" method="modificarAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
     </package>

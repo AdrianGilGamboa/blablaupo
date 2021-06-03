@@ -69,18 +69,15 @@ public class accionLogin extends ActionSupport {
            if(u== null){
             addFieldError("login", getText("login"));                  
             return ERROR;
+             }
            else{
                session.setAttribute("logado", "si");
                session.setAttribute("usuario", u);
                return SUCCESS;
            }
-    }
+   
      
-      public String logout(){
-        session.invalidate();
-        return SUCCESS;   
-    }
-     
+     }
     public String execute() throws Exception {
         return SUCCESS;
     }

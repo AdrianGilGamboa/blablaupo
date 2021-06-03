@@ -27,7 +27,6 @@ public class accionCoche extends ActionSupport {
     private Coche c = new Coche();
     private CocheDAO cocheDAO = new CocheDAO();
      HttpSession session = ServletActionContext.getRequest().getSession(false);
-
     public Coche getC() {
         return c;
     }
