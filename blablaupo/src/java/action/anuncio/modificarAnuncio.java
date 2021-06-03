@@ -128,7 +128,7 @@ public class modificarAnuncio extends ActionSupport {
     
     
     public String modificarAnuncio() throws java.text.ParseException{
-        List a;
+        List a = new ArrayList();
          a = (List) session.getAttribute("lista");
  
         Anuncios anuncio = new Anuncios();

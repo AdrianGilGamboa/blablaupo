@@ -32,6 +32,26 @@
 
             <s:iterator value="#session.lista" >
 
+
+                <tr>
+                    <td><s:property value="idAnuncio" /></td>
+                    <td><s:property value="coste" /></td>
+                    <td><s:property value="anuncinate" /></td>
+                    <td><s:property value="fechaInicio" /></td>
+                    <td><s:property value="fechaFin" /></td>
+                    <td><s:property value="multimedia" /></td>
+                    <td>
+                        
+                     <form action="borrarAnuncio" method="post">
+                        <input type="hidden" name="id" value=%{idAnuncio}/>
+                        <input type="submit" name="botonBorrar" value="Borrar" />
+                    </form>
+                        </td>
+                        <td>
+                        
+                     <form action="/blablaupo/vistas/GestionAnuncio/modificarAnuncio.jsp" method="post">
+                        <input type="hidden" name="id" value="%{idAnuncio}" />
+
             <tr>
                 <td><s:property value="idAnuncio" /></td>
                 <td><s:property value="coste" /></td>

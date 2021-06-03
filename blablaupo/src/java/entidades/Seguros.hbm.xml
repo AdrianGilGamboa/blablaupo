@@ -8,14 +8,14 @@
             <column name="ID_SEGURO" />
             <generator class="identity" />
         </id>
-        <property name="empresa" type="int">
+        <property name="empresa" type="string">
             <column name="EMPRESA" not-null="true" />
         </property>
-        <property name="tipo" type="int">
+        <property name="tipo" type="string">
             <column name="TIPO" not-null="true" />
         </property>
-        <property name="descripcion" type="int">
-            <column name="DESCRIPCION" not-null="true" />
+        <property name="descuento" type="float">
+            <column name="DESCUENTO" not-null="true" />
         </property>
         <set name="viajeses" table="viajes" inverse="true" lazy="true" fetch="select">
             <key>
