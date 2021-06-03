@@ -126,10 +126,10 @@ public class eliminarAnuncio extends ActionSupport {
     
     
     public String borrarAnuncio(){
-        List a;
+        List a = new ArrayList();
         a = (List) session.getAttribute("lista");
-        
-            Anuncios anuncio = anuncioDAO.read(this.getId());
+        System.out.println(anuncioDAO.read(this.id));
+            Anuncios anuncio = anuncioDAO.read(this.id);
                 anuncioDAO.delete(anuncio);
 
         return SUCCESS;

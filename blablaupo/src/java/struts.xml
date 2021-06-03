@@ -55,6 +55,15 @@
         </action>
     </package>
     
+     <package name="seguroPackage" extends="struts-default">
+         <action name="registrarSeguro" class="action.seguro.crearSeguro" method="crearSeguro">
+            <result name="success">/vistas/GestionAnuncio/verSeguros.jsp</result>
+        </action>
+       
+    </package>
+    
+    
+    
     
     
     

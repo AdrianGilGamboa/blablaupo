@@ -43,14 +43,14 @@
                     <td>
                         
                      <form action="borrarAnuncio" method="post">
-                        <input type="hidden" name="id" value=<s:property value="idAnuncio" />/>
+                        <input type="hidden" name="id" value=%{idAnuncio}/>
                         <input type="submit" name="botonBorrar" value="Borrar" />
                     </form>
                         </td>
                         <td>
                         
                      <form action="/blablaupo/vistas/GestionAnuncio/modificarAnuncio.jsp" method="post">
-                        <input type="hidden" name="id" value=<s:property value="idAnuncio" /> />
+                        <input type="hidden" name="id" value="%{idAnuncio}" />
                         <input type="submit" name="botonModificar" value="Modificar" />
                     </form>
                         </td>
