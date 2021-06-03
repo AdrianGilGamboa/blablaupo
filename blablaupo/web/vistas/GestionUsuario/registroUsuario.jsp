@@ -44,7 +44,7 @@
                     </div>
                 <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
                     <p style="text-align: center; margin-top: 5%; margin-bottom: 0;">
-                    <s:text name="¿? "></s:text><s:a href="login.jsp">Iniciar Sesión</s:a>
+                    <s:text name="¿Ya tienes cuenta? "></s:text><s:a href="login.jsp">Iniciar Sesión</s:a>
                     </p>
             </s:form>
         </div>
