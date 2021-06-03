@@ -12,34 +12,53 @@
     </head>
     <body>
     <s:action name="verAnuncio"></s:action>
-        <h1>Ver Anuncios</h1>
+     
+                <h2 class="text-info">Anuncios</h2>
+            </div>
+           
          <s:a href="/blablaupo/vistas/inicio.jsp">Inicio</s:a>
-        <table border=1 cellspacing=1 cellpadding=2 width="50%" bgcolor="#FFFFFF">
+         <form action="/blablaupo/vistas/GestionAnuncio/crearAnuncio.jsp">
+             <input type="submit" name="crear" value="Crea tu anuncio!">
+         </form>
+        <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
             <tr>  
+                <th>ID</th>
                 <th>Coste</th>
                 <th>Anunciante</th>
                 <th>Fecha de inicio</th>
                 <th>Fecha de fin</th>
                 <th>Multimedia</th>
-                <th>
-                    <form action="add.jsp" method="post">                       
-                        <input type="submit" name="btnForm" value="Alta" />
-                    </form>
-                </th>
-            </tr>
-               
-            </tr>
+                <th><p align= center>Borrar</p></th>
+                <th><p align= center>Modificar</p></th>
+
              <s:iterator value="#session.lista" >
 
                 <tr>
-                    <td><b><s:property value="coste" /></b></td>
-                    <td><b><s:property value="anuncinate" /></b></td>
-                    <td><b><s:property value="fechaInicio" /></b></td>
-                    <td><b><s:property value="fechaFin" /></b></td>
-                    <td><b><s:property value="multimedia" /></b></td>
+                    <td><s:property value="idAnuncio" /></td>
+                    <td><s:property value="coste" /></td>
+                    <td><s:property value="anuncinate" /></td>
+                    <td><s:property value="fechaInicio" /></td>
+                    <td><s:property value="fechaFin" /></td>
+                    <td><s:property value="multimedia" /></td>
+                    <td>
+                        
+                     <form action="borrarAnuncio" method="post">
+                        <input type="hidden" name="id" value=<s:property value="idAnuncio" />/>
+                        <input type="submit" name="botonBorrar" value="Borrar" />
+                    </form>
+                        </td>
+                        <td>
+                        
+                     <form action="/blablaupo/vistas/GestionAnuncio/modificarAnuncio.jsp" method="post">
+                        <input type="hidden" name="id" value=<s:property value="idAnuncio" /> />
+                        <input type="submit" name="botonModificar" value="Modificar" />
+                    </form>
+                        </td>
+                        
                 </tr>
             </s:iterator>
         </table>
-        
+                
+
     </body>
 </html>

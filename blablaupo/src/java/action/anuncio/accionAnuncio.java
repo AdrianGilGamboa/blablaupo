@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package action.usuario;
+package action.anuncio;
 
 import com.mchange.io.FileUtils;
 import com.opensymphony.xwork2.ActionSupport;
@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.servlet.DispatcherType;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
@@ -25,7 +26,7 @@ import org.apache.struts2.ServletActionContext;
  */
 public class accionAnuncio extends ActionSupport {
 
-    private int id;
+  int id;
     private float coste;
     private String anunciante;
     private Date fechaInicio;
@@ -37,6 +38,14 @@ public class accionAnuncio extends ActionSupport {
     private String fotoPerfilFileName;
     private List<Anuncios> lista = new ArrayList();
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(){
+        this.id = id;
+    }
+
 
     public AnunciosDAO getAnuncioDAO() {
         return anuncioDAO;
@@ -45,16 +54,6 @@ public class accionAnuncio extends ActionSupport {
     public void setAnuncioDAO(AnunciosDAO anuncioDAO) {
         this.anuncioDAO = anuncioDAO;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    
     
     public List getLista() {
         return lista;
@@ -145,7 +144,6 @@ public class accionAnuncio extends ActionSupport {
         anuncio.setAnunciante(getAnunciante());
         anuncio.setMultimedia(getMultimedia());
         anuncioDAO.create(anuncio);
-        lista = anuncioDAO.list();
         return SUCCESS;
     }
     public String verAnuncio(){
@@ -154,6 +152,34 @@ public class accionAnuncio extends ActionSupport {
         System.out.println("Probando el action");
         lista = anuncioDAO.list();
         session.setAttribute("lista", lista);
+        return SUCCESS;
+    }
+    public String borrarAnuncio(){
+        List a ;
+        a = (List) session.getAttribute("lista");
+    
+            Anuncios anuncio = new Anuncios();
+            anuncio = (Anuncios) a.get(this.getId());
+            System.out.println("-----------IDENTIFICADOR------------"+anuncio.getIdAnuncio());
+                 anuncioDAO.delete(anuncio);
+
+
+        return SUCCESS;
+    }
+    
+    public String modificarAnuncio() throws java.text.ParseException{
+        List a;
+         a = (List) session.getAttribute("lista");
+ 
+            Anuncios anuncio = new Anuncios();
+            anuncio = (Anuncios) a.get(this.getId());
+             anuncio.setCoste(getCoste());
+        SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
+        anuncio.setFechaInicio(parseador.parse(parseador.format(getFechaInicio())));
+        anuncio.setFechaFin(parseador.parse(parseador.format(getFechaFin())));
+        anuncio.setAnunciante(getAnunciante());
+        anuncio.setMultimedia(getMultimedia());
+        anuncioDAO.update(anuncio);
         return SUCCESS;
     }
 
