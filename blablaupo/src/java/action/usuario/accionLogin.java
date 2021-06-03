@@ -66,7 +66,8 @@ public class accionLogin extends ActionSupport {
     }
      public String login(){
          u = dao.comprobarLogin(this. getEmail(),this.getPassword());
-           if(u== null)
+           if(u== null){
+            addFieldError("login", getText("login"));                  
             return ERROR;
            else{
                session.setAttribute("logado", "si");
@@ -82,6 +83,15 @@ public class accionLogin extends ActionSupport {
      
     public String execute() throws Exception {
         return SUCCESS;
+    }
+    
+    public void validate() { 
+        if (this.getEmail().equals("")){
+            addFieldError("email", getText("email"));
+        }
+        if (this.getPassword().equals("")){
+            addFieldError("password", getText("password"));
+        }
     }
 
     
