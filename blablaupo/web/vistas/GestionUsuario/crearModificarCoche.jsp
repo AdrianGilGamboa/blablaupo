@@ -39,7 +39,7 @@
             </s:form>
         </div>
         <div class="container" style="margin-top: 3%">
-            <img src="/blablaupo/vistas/logo.png" width="100%"/>
+            <img src="/blablaupo/vistas/logo.png" class="logo"/>
         </div>
     </body>
 </html>

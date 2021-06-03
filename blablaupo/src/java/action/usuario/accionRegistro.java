@@ -140,7 +140,7 @@ public class accionRegistro extends ActionSupport {
 
     
 
-    public void validate() {;
+   /* public void validate() {;
         if (this.getNombre().equals("")) {
             addFieldError("nombre", getText("registrar.nombre"));
         }
@@ -148,7 +148,7 @@ public class accionRegistro extends ActionSupport {
         if (this.getApellidos().length() == 0) {
             addFieldError("apellidos", getText("registrar.apellidos"));
         }
-        if (this.getPassword().length() == 0) {
+        if (this.getPassword().length() < 6) {
             addFieldError("password", getText("registrar.password"));
         }
         if (this.getEmail().length() == 0) {
@@ -167,7 +167,8 @@ public class accionRegistro extends ActionSupport {
         if (this.getTipo() == null) {
             addFieldError("tipo", getText("registrar.coche"));
         }
-    }
+    }*/
+
     public String execute() throws Exception {
         return SUCCESS;
     }

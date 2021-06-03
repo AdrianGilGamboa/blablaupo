@@ -55,6 +55,7 @@
         </action>
     </package>
     
+
      <package name="seguroPackage" extends="struts-default">
          <action name="registrarSeguro" class="action.seguro.crearSeguro" method="crearSeguro">
             <result name="success">/vistas/GestionAnuncio/verSeguros.jsp</result>
@@ -64,6 +65,13 @@
     
     
     
+
+    <package name="cuponPackage" extends="struts-default">
+         <action name="mostrarCupones" class="action.cupon.accionCupon">
+            <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
+        </action>
+    </package>
+
     
     
     

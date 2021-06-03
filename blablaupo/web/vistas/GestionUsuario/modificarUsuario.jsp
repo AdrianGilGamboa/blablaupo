@@ -44,9 +44,12 @@
 
             <br/>
             <s:form name="Eliminar" action="eliminarUsuario" cssStyle="padding-top:1px;padding-bottom:1px">
-                    <s:submit name="eliminarUsuario" value="Eliminar Usuario" cssClass="btn btn-primary btn-block"></s:submit>
+                <s:submit name="eliminarUsuario" value="Eliminar Usuario" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
 
+        </div>
+        <div class="container" style="margin-top: 3%">
+            <img src="/blablaupo/vistas/logo.png" class="logo"/>
         </div>
     </body>
 </html>
