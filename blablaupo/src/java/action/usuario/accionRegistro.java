@@ -148,7 +148,7 @@ public class accionRegistro extends ActionSupport {
         if (this.getApellidos().length() == 0) {
             addFieldError("apellidos", getText("registrar.apellidos"));
         }
-        if (this.getPassword().length() == 0) {
+        if (this.getPassword().length() < 6) {
             addFieldError("password", getText("registrar.password"));
         }
         if (this.getEmail().length() == 0) {

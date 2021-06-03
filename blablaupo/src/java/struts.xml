@@ -55,6 +55,11 @@
         </action>
     </package>
     
+    <package name="cuponPackage" extends="struts-default">
+         <action name="mostrarCupones" class="action.cupon.accionCupon">
+            <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
+        </action>
+    </package>
     
     
     
