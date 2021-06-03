@@ -74,12 +74,8 @@ public class accionLogin extends ActionSupport {
                session.setAttribute("usuario", u);
                return SUCCESS;
            }
-    }
-     
-      public String logout(){
-        session.invalidate();
-        return SUCCESS;   
-    }
+    }   
+  
      
     public String execute() throws Exception {
         return SUCCESS;
