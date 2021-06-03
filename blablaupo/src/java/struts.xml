@@ -37,6 +37,9 @@
         <result name="input">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         <result name="error">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         </action>
+        <action name="verCoche">
+        <result>/vistas/GestionUsuario/crearModificarCoche.jsp</result>
+        </action>
        
     </package>
     

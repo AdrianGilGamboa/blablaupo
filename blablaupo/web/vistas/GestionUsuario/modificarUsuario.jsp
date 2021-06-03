@@ -18,34 +18,33 @@
                     <h2 class="text-info">Mi Perfil</h2>
                 </div>
             <s:form name="Modificar" action="modificarUsuario" >
-                <div class="form-group">
-                    <div class="form-group">
-                        <s:label value="Teléfono"></s:label>
-                        <s:textfield name="telefono" value="%{#session.usuario.telefono}" cssClass="form-control"></s:textfield>
-                        </div>
-
-                        <div class="form-group">
-                        <s:label value="¿Tienes coche?"></s:label>
-                            <div class="group-radio">
-                            <s:radio name="tipo" list="{'Si','No'}" value="%{#session.usuario.tipo}" cssClass="radio-form"></s:radio>     
-                            </div>            
-                        </div>
-                        <div class="form-group">
-                        <s:label value="Contraseña Nueva"></s:label>
-                        <s:password name="passwordNueva" cssClass="form-control"></s:password>
-                        </div>
-                        <div class="form-group">
-                        <s:label value="Contraseña actual para modificar los datos"></s:label>
-                        <s:password name="password" cssClass="form-control"></s:password>
-                        </div>
-                    <s:submit name="modificar" value="Modificar Datos" cssClass="btn btn-primary btn-block"></s:submit>
-                    </div>
+                <s:a href="/blablaupo/vistas/inicio.jsp">Volver</s:a>
+                <s:label value="Teléfono"></s:label>
+                <s:textfield name="telefono" value="%{#session.usuario.telefono}" cssClass="form-control"></s:textfield>
+                <s:label value="¿Tienes coche?"></s:label>
+                <s:radio name="tipo" list="{'Si','No'}" value="%{#session.usuario.tipo}" cssClass="radio-form"></s:radio>     
+                <s:label value="Contraseña Nueva (Opcional)"></s:label>
+                <s:password name="passwordNueva" cssClass="form-control"></s:password>
+                <s:label value="Contraseña actual para modificar los datos" cssStyle="margin-top:15%;"></s:label>
+                <s:password name="password" cssClass="form-control" ></s:password>
+                <s:submit name="modificar" value="Modificar Datos" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
             </s:form>
 
             <br/>
-            <s:form name="Eliminar" action="eliminarUsuario" cssStyle="padding-top:1px;padding-bottom:1px">
+
+            <s:if test="%{#session.coche!=null}">
+                <s:form name="Mi Coche" action="verCoche" cssStyle="padding-top:1px;padding-bottom:1px">
+                    <s:submit name="verCoche" value="Mi Coche" cssClass="btn btn-primary btn-block"></s:submit>
+                </s:form>
+            </s:if>
+
+            <s:form name="Eliminar" action="eliminarUsuario" cssStyle="padding-top:0px;padding-bottom:0px;margin-top:3%;">
                 <s:submit name="eliminarUsuario" value="Eliminar Usuario" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>
+
+
+
+
 
         </div>
         <div class="container" style="margin-top: 3%">

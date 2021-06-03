@@ -13,29 +13,21 @@
         <body>
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Registra tu coche</h2>
+                    <h2 class="text-info">Mi Coche</h2>
                 </div>
             <s:form name="RegistroCoche" action="registrarCoche" >
-                    <div class="form-group">
                     <s:label value="Matricula"></s:label>
-                    <s:textfield name="matricula" label="Matricula" cssClass="form-control"></s:textfield>
-                    </div>
-                    <div class="form-group">
+                    <s:textfield name="matricula" value="%{#session.coche.matricula}"  cssClass="form-control"></s:textfield>
                     <s:label value="Color"></s:label>
-                    <s:textfield name="color" label="Color" cssClass="form-control"></s:textfield>
-                    </div>
+                    <s:textfield name="color" value="%{#session.coche.color}"  cssClass="form-control"></s:textfield>
                 <s:label value="Modelo"></s:label>
-                <s:textfield name="modelo" label="Modelo" cssClass="form-control"></s:textfield>
-                    <div class="form-group">
+                <s:textfield name="modelo" value="%{#session.coche.modelo}" cssClass="form-control"></s:textfield>
                     <s:label value="Marca"></s:label>
-                    <s:textfield name="marca" label="Marca" cssClass="form-control"></s:textfield>
-                    </div>
-                    <div class="form-group">
-                    <s:label value="Dni del conductor: "></s:label> 
-                    <s:textfield value="%{#session.usuario.dni}"  cssClass="form-control" readonly="true"></s:textfield>
-                    </div>
+                    <s:textfield name="marca" value="%{#session.coche.marca}"  cssClass="form-control"></s:textfield>
+                    <s:label value="Dni del conductor "></s:label> 
+                    <s:textfield name="dni" value="%{#session.usuario.dni}"  cssClass="form-control" readonly="true"></s:textfield>
 
-                <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
+                <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
             </s:form>
         </div>
         <div class="container" style="margin-top: 3%">

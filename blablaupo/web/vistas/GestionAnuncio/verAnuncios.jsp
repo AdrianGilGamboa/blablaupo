@@ -24,8 +24,8 @@
                 <th>ID</th>
                 <th>Coste</th>
                 <th>Anunciante</th>
-                <th>Fecha de inicio</th>
-                <th>Fecha de fin</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
                 <th>Multimedia</th>
                 <th><p align= center>Borrar</p></th>
                 <th><p align= center>Modificar</p></th>

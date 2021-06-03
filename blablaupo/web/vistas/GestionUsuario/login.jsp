@@ -15,7 +15,7 @@
     <body>
         <s:i18n name="check">
             <div class="container">
-                <div class="block-heading">
+                <div class="block-heading" style="margin-left: 3%;">
                     <h2 class="text-info">Iniciar Sesión</h2>
                 </div>
                 <h2><s:fielderror fieldName="login"/></h2>
@@ -24,8 +24,8 @@
                         <s:textfield name="email" cssClass="form-control"></s:textfield>
                         <s:label value="Contraseña"></s:label>
                         <s:password name="password" cssClass="form-control"></s:password>
-                    <s:submit name="acceder" value="Acceder" cssClass="btn btn-primary btn-block"></s:submit>
-               <p style="text-align: center; margin-top: 5%; margin-bottom: 0;">
+                    <s:submit name="acceder" value="Acceder" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
+               <p style="text-align: center; margin-bottom: 5%;">
                     <s:text name="¿No tienes cuenta aún? "></s:text><s:a href="/blablaupo/vistas/GestionUsuario/registroUsuario.jsp">Regístrate</s:a>
                     </p>
                 </s:form>

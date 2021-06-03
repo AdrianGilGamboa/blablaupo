@@ -18,6 +18,7 @@ import org.apache.struts2.ServletActionContext;
  * @author manum
  */
 public class accionCoche extends ActionSupport {
+
     private String matricula;
     private String marca;
     private String color;
@@ -26,7 +27,8 @@ public class accionCoche extends ActionSupport {
     private UsuariosDAO dao = new UsuariosDAO();
     private Coche c = new Coche();
     private CocheDAO cocheDAO = new CocheDAO();
-     HttpSession session = ServletActionContext.getRequest().getSession(false);
+    HttpSession session = ServletActionContext.getRequest().getSession(false);
+
     public Coche getC() {
         return c;
     }
@@ -90,40 +92,52 @@ public class accionCoche extends ActionSupport {
     public void setDao(UsuariosDAO dao) {
         this.dao = dao;
     }
-    
+
     public accionCoche() {
     }
-    
-    public String crearCoche(){
+
+    public String crearCoche() {
+
         u = (Usuarios) session.getAttribute("usuario");
-        c.setMatricula(getMatricula());
-        c.setColor(getColor());
-        c.setModelo(getModelo());
-        c.setMarca(getMarca());
-        c.setUsuarios(u);
-        cocheDAO.create(c);
+        if (session.getAttribute("coche") == null) {
+            c.setMatricula(getMatricula());
+            c.setColor(getColor());
+            c.setModelo(getModelo());
+            c.setMarca(getMarca());
+            c.setUsuarios(u);
+            cocheDAO.create(c);
+            session.setAttribute("coche", c);
+        } else {
+            CocheDAO daoC = new CocheDAO();
+            Coche c = daoC.readDniUsuario(u.getDni());
+            c.setColor(getColor());
+            c.setModelo(getModelo());
+            c.setMarca(getMarca());
+            cocheDAO.update(c);
+        }
         return SUCCESS;
     }
+
     public String execute() throws Exception {
         return SUCCESS;
     }
-    
-    public void validate() {      
-        if (this.getMatricula().equals("")){
+
+    public void validate() {
+        if (this.getMatricula().equals("")) {
             addFieldError("matricula", "Matricula is required.");
         }
-        
-        if(this.getMarca().equals("")){
-            addFieldError("color", "Matricula is required.");
+
+        if (this.getMarca().equals("")) {
+            addFieldError("color", "Color is required.");
         }
-        
-        if(this.getColor().equals("")){
-            addFieldError("marca", "Matricula is required.");
+
+        if (this.getColor().equals("")) {
+            addFieldError("marca", "Marca is required.");
         }
-        
-        if(this.getModelo().equals("")){
-            addFieldError("modelo", "Matricula is required.");
+
+        if (this.getModelo().equals("")) {
+            addFieldError("modelo", "Modelo is required.");
         }
-     }
-    
+    }
+
 }

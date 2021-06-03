@@ -114,7 +114,9 @@ public class accionModificar extends ActionSupport {
                 } else {
                     usuario.setTipo("No");
                     CocheDAO daoCoche = new CocheDAO();
+                    System.out.println(daoCoche.readDniUsuario(usuario.getDni()));
                     daoCoche.delete(daoCoche.readDniUsuario(usuario.getDni()));
+                    session.setAttribute("coche", null);
                 }
             }
             dao.update(usuario);

@@ -128,6 +128,7 @@ public class accionRegistro extends ActionSupport {
         usuario.setApellidos(getApellidos());
         usuario.setPassword(getPassword());
         usuario.setTipo(getTipo());
+        session.setAttribute("usuario", usuario);
         if (getTipo().equals("Si")) {
             dao.create(usuario);
             return COCHE;

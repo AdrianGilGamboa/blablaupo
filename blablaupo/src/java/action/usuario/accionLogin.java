@@ -8,7 +8,9 @@ package action.usuario;
 import static com.opensymphony.xwork2.Action.ERROR;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import dao.CocheDAO;
 import dao.UsuariosDAO;
+import entidades.Coche;
 import entidades.Usuarios;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
@@ -77,6 +79,12 @@ public class accionLogin extends ActionSupport {
 
                session.setAttribute("logado", "si");
                session.setAttribute("usuario", u);
+               CocheDAO daoC = new CocheDAO();
+               Coche c = daoC.readDniUsuario(u.getDni());
+               //if(c!=null){
+               //System.out.println(u.getDni());
+               session.setAttribute("coche", c);
+               //}
                return SUCCESS;
            }
 
