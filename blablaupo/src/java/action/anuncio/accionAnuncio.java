@@ -155,15 +155,14 @@ public class accionAnuncio extends ActionSupport {
         return SUCCESS;
     }
     public String borrarAnuncio(){
-        List a ;
+        /*List a ;
         a = (List) session.getAttribute("lista");
-    
+        
             Anuncios anuncio = new Anuncios();
             anuncio = (Anuncios) a.get(this.getId());
             System.out.println("-----------IDENTIFICADOR------------"+anuncio.getIdAnuncio());
-                 anuncioDAO.delete(anuncio);
-
-
+                 //anuncioDAO.delete(anuncio);
+        */
         return SUCCESS;
     }
     

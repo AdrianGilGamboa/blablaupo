@@ -16,8 +16,8 @@
         <s:action name="verAnuncio"></s:action>
 
             <h2 class="text-info">Anuncios</h2>
-        <form action="/blablaupo/vistas/GestionAnuncio/crearAnuncio.jsp" class="boton">
-            <input type="submit" name="crear" value="Crea tu anuncio!">
+        <form action="/blablaupo/vistas/GestionAnuncio/crearAnuncio.jsp">
+            <input type="submit" name="crear" value="Crea tu anuncio!"  class="btn btn-primary btn-block">
         </form>
         <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
             <tr>  
@@ -35,7 +35,7 @@
             <tr>
                 <td><s:property value="idAnuncio" /></td>
                 <td><s:property value="coste" /></td>
-                <td><s:property value="anuncinate" /></td>
+                <td><s:property value="anunciante" /></td>
                 <td><s:property value="fechaInicio" /></td>
                 <td><s:property value="fechaFin" /></td>
                 <td><s:property value="multimedia" /></td>
@@ -43,14 +43,14 @@
 
                     <form action="borrarAnuncio" method="post">
                         <input type="hidden" name="id" value=<s:property value="idAnuncio" />/>
-                        <input type="submit" name="botonBorrar" value="Borrar" />
+                        <input type="submit" name="botonBorrar" value="Borrar" class="btn btn-primary btn-block"/>
                     </form>
                 </td>
                 <td>
 
-                    <form action="/blablaupo/vistas/GestionAnuncio/modificarAnuncio.jsp" method="post">
+                    <form action="modificarAnuncio" method="post">
                         <input type="hidden" name="id" value=<s:property value="idAnuncio" /> />
-                        <input type="submit" name="botonModificar" value="Modificar" />
+                        <input type="submit" name="botonModificar" value="Modificar" class="btn btn-primary btn-block"/>
                     </form>
                 </td>
 

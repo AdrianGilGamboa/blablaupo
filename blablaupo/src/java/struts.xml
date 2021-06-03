@@ -47,7 +47,7 @@
         <action name="verAnuncio" class="action.anuncio.verAnuncio" method="verAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
-       <action name="borrarAnuncio" class="action.anuncio.accionAnuncio" method="borrarAnuncio">
+       <action name="borrarAnuncio" class="action.anuncio.eliminarAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
         <action name="modificarAnuncio" class="action.anuncio.modificarAnuncio" method="modificarAnuncio">

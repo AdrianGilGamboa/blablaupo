@@ -1,17 +1,108 @@
 
 table {
-    width: 70%;
-/*    position:fixed;*/
-       text-align: center;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-style: solid;
+  color: #000000;
+  margin-bottom: 5%;
+  margin-top: 1%;
 }
 
-table th {
-    height: 35px;
-    color:white;
-    background-color: #878480;
+td{
+  border-width: 2px;  
+  border-style: solid;
+  padding: 5px;
+  border-color: #ffbe49;
 }
-table td {
-      color:black;
-     background-color:#ddd7c8;
+
+th{
+    background-color: #0e3f70;
+    color: #ffff;
     
+}
+
+table thead {
+  background-color: #7ea8f8;
+}
+
+.boton{
+    
+}
+
+form{
+    text-align: center;
+}
+
+
+.btn-block {
+    display: block;
+}
+
+
+@media (prefers-reduced-motion:reduce) {
+    .btn {
+        transition: none;
+    }
+}
+
+.btn {
+    display: inline-block;
+    font-weight: bold;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: 2px #7ea8f8 solid;
+}
+
+/*botones Login*/
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+    box-shadow: 0 0 0 .2rem #ddd7c8;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #ddd7c8;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 .2rem #ddd7c8;
+}
+
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+    color: #fff;
+    background-color: #ffbe49;
+    border-color: #ddd7c8;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem #ddd7c8;
+}
+
+.btn:hover {
+    color: black;
+    text-decoration: none;
 }

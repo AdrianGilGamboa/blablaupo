@@ -9,7 +9,20 @@
     font-weight: normal;
     font-style: normal;
 }
+.cerrar{
+     background-color: #ffbe49;
+        color: inherit;
+        border: none;
+        padding: 0;
+        margin-bottom: 50px;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+}
 
+.wwFormTable{
+    background-color: #ffbe49;
+}
 body{
     font-family: Arial;
     width:80%;
