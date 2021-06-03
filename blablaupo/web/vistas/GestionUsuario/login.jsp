@@ -18,7 +18,7 @@
             <div class="block-heading">
                 <h2 class="text-info">Iniciar Sesión</h2>
             </div>
-            <h2><s:div key="login"/></h2>
+            <h2><s:fielderror fieldName="login"/></h2>
             <s:form action="comprobarLogin" method="post">
                 <div class="form-group">
                     <s:label value="Email"></s:label>

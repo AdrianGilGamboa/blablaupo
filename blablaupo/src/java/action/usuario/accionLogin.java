@@ -64,35 +64,29 @@ public class accionLogin extends ActionSupport {
     public accionLogin() {
     }
 
-    public String login() {
-        u = dao.comprobarLogin(this.getEmail(), this.getPassword());
-        if (u == null) {
-            addFieldError("login", getText("login"));
+     public String login(){
+         u = dao.comprobarLogin(this. getEmail(),this.getPassword());
+           if(u== null){
+            addFieldError("login", getText("login.login"));                  
             return ERROR;
-        }
-            else{
+           }else{
                session.setAttribute("logado", "si");
                session.setAttribute("usuario", u);
                return SUCCESS;
            }
-        
-    }
-
-    public String logout() {
-        session.invalidate();
-        return SUCCESS;
-    }
-
+    }   
+  
+     
     public String execute() throws Exception {
         return SUCCESS;
     }
-
-    public void validate() {
-        if (this.getEmail().equals("")) {
-            addFieldError("email", getText("email"));
+    
+    public void validate() { 
+        if (this.getEmail().equals("")){
+            addFieldError("email", getText("login.email"));
         }
-        if (this.getPassword().equals("")) {
-            addFieldError("password", getText("password"));
+        if (this.getPassword().equals("")){
+            addFieldError("password", getText("login.password"));
         }
     }
 }

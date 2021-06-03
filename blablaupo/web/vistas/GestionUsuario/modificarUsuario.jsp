@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <div class="form-group">
                         <s:label value="Teléfono"></s:label>
-                        <s:textfield name="telefono" value="%{#session.usuario.telefono}" label="Telefono" cssClass="form-control"></s:textfield>
+                        <s:textfield name="telefono" value="%{#session.usuario.telefono}" cssClass="form-control"></s:textfield>
                         </div>
 
                         <div class="form-group">
@@ -32,21 +32,19 @@
                         </div>
                         <div class="form-group">
                         <s:label value="Contraseña Nueva"></s:label>
-                        <s:password name="passwordNueva" label="Contraseña" cssClass="form-control"></s:password>
+                        <s:password name="passwordNueva" cssClass="form-control"></s:password>
                         </div>
                         <div class="form-group">
                         <s:label value="Contraseña actual para modificar los datos"></s:label>
-                        <s:password name="password" label="Contraseña" cssClass="form-control"></s:password>
+                        <s:password name="password" cssClass="form-control"></s:password>
                         </div>
                     <s:submit name="modificar" value="Modificar Datos" cssClass="btn btn-primary btn-block"></s:submit>
                     </div>
             </s:form>
 
             <br/>
-            <s:form name="Eliminar" action="eliminarUsuario" cssStyle="padding-top:12px;padding-bottom:1px">
-                <div class="form-group">
+            <s:form name="Eliminar" action="eliminarUsuario" cssStyle="padding-top:1px;padding-bottom:1px">
                     <s:submit name="eliminarUsuario" value="Eliminar Usuario" cssClass="btn btn-primary btn-block"></s:submit>
-                    </div>    
             </s:form>
 
         </div>
