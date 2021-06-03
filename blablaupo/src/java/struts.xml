@@ -29,7 +29,7 @@
             <result name="error">/vistas/GestionUsuario/registroUsuario.jsp</result>
             <result name="coche">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         </action>
-        <action name="cerrarSesion" class="action.usuario.accionLogin" method="logout">
+        <action name="cerrarSesion" class="action.usuario.accionLogout" method="logout">
             <result name="success">/vistas/GestionUsuario/login.jsp</result>
         </action>
         <action name="registrarCoche" class="action.usuario.accionCoche" method="crearCoche">
@@ -69,10 +69,13 @@
     
     
     <package name="usuario" extends="struts-default">
-        <action name="modificarUsuario" class="action.usuario.accionRegistro" method="modificar">
-            <result name="success">/vistas/GestionUsuario/login.jsp</result>
+        <action name="modificarUsuario" class="action.usuario.accionModificar">
+            <result name="success">/vistas/inicio.jsp</result>
             <result name="coche">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
             <result name="error">/vistas/GestionUsuario/modificarUsuario.jsp</result>
+        </action>
+        <action name="eliminarUsuario" class="action.usuario.accionEliminar">
+            <result name="success">/vistas/GestionUsuario/login.jsp</result>
         </action>
     </package>
 </struts>

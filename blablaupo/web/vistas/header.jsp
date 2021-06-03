@@ -24,7 +24,7 @@
 
                 <s:a cssStyle="background-color:#ffbe49;" >
                     <s:form action="cerrarSesion" method="post">
-                        <s:submit name="salir" value="Cerrar Sesiï¿½n" cssClass="input-header"></s:submit>
+                        <s:submit name="salir" value="Cerrar Sesión" cssClass="input-header"></s:submit>
                     </s:form>
                 </s:a>
 
