@@ -14,36 +14,38 @@
                     <h2 class="text-info">Registro</h2>
                 </div>
             <s:form name="Registro" action="registroUsuario" >
-                <s:a href="login.jsp">Volver</s:a>
-                    <div class="form-group">
+                <div class="form-group">
                     <s:label value="Nombre"></s:label>
-                    <s:textfield name="nombre" label="Nombre" cssClass="form-control"></s:textfield>
+                    <s:textfield name="nombre" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
                     <s:label value="Apellidos"></s:label>
-                    <s:textfield name="apellidos" label="Apellidos" cssClass="form-control"></s:textfield>
+                    <s:textfield name="apellidos" cssClass="form-control"></s:textfield>
                     </div>
                 <s:label value="Contraseña"></s:label>
-                <s:password name="password" label="Contraseña" cssClass="form-control"></s:password>
+                <s:password name="password" cssClass="form-control"></s:password>
                     <div class="form-group">
                     <s:label value="Email"></s:label>
-                    <s:textfield name="email" label="Email" cssClass="form-control"></s:textfield>
+                    <s:textfield name="email" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
                     <s:label value="DNI"></s:label>
-                    <s:textfield name="dni" label="DNI" cssClass="form-control"></s:textfield>
+                    <s:textfield name="dni" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
                     <s:label value="Teléfono"></s:label>
-                    <s:textfield name="telefono" label="Telefono" cssClass="form-control"></s:textfield>
+                    <s:textfield name="telefono" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
                     <s:label value="¿Tienes coche?"></s:label>
                         <div class="group-radio">
-                        <s:radio name="tipo" list="{'Si','No'}" value="False" cssClass="radio-form"></s:radio>     
+                        <s:radio name="tipo" list="{'Si','No'}" cssClass="radio-form"></s:radio>     
                         </div>            
                     </div>
                 <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
+                    <p style="text-align: center; margin-top: 5%; margin-bottom: 0;">
+                    <s:text name="¿? "></s:text><s:a href="login.jsp">Iniciar Sesión</s:a>
+                    </p>
             </s:form>
         </div>
         <div class="container" style="margin-top: 3%">

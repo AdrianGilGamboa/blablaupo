@@ -13,10 +13,7 @@ import entidades.Usuarios;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-/**
- *
- * @author manum
- */
+
 public class accionLogin extends ActionSupport {
     private String email;
      private String password;
@@ -69,24 +66,32 @@ public class accionLogin extends ActionSupport {
     }
      public String login(){
          u = dao.comprobarLogin(this. getEmail(),this.getPassword());
-           if(u== null)
+           if(u== null){
+            addFieldError("login", getText("login"));                  
             return ERROR;
            else{
-               session.setAttribute("usuario", u.getEmail());
                session.setAttribute("logado", "si");
-               session.setAttribute("usuario", u.getDni());
+               session.setAttribute("usuario", u);
                return SUCCESS;
            }
     }
      
       public String logout(){
         session.invalidate();
-        return SUCCESS;
-        
+        return SUCCESS;   
     }
      
     public String execute() throws Exception {
         return SUCCESS;
+    }
+    
+    public void validate() { 
+        if (this.getEmail().equals("")){
+            addFieldError("email", getText("email"));
+        }
+        if (this.getPassword().equals("")){
+            addFieldError("password", getText("password"));
+        }
     }
 
     
