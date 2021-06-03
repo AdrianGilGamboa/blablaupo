@@ -17,8 +17,7 @@ public class crearSeguro extends ActionSupport {
      private Integer idSeguro;
      private String empresa;
      private String tipo;
-     private String descripcion;
-     private Set viajeses = new HashSet(0);
+     private float descuento;
      private SegurosDAO sDao = new SegurosDAO();
      
     public SegurosDAO getsDao() {
@@ -54,35 +53,30 @@ public class crearSeguro extends ActionSupport {
         this.tipo = tipo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public float getDescuento() {
+        return descuento;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescuento(float descuento) {
+        this.descuento = descuento;
     }
 
-    public Set getViajeses() {
-        return viajeses;
-    }
-
-    public void setViajeses(Set viajeses) {
-        this.viajeses = viajeses;
-    }
+   
      
+    
+    public crearSeguro() {
+    }
+    
     public String crearSeguro(){
         
         Seguros seguro = new Seguros();
         seguro.setTipo(getTipo());
-        seguro.setDescripcion(getDescripcion());
+        seguro.setDescuento(getDescuento());
         seguro.setEmpresa(getEmpresa());
         sDao.create(seguro);
         return SUCCESS;
     }
      
-    public crearSeguro() {
-    }
-    
     public String execute() throws Exception {
         return SUCCESS;
     }
