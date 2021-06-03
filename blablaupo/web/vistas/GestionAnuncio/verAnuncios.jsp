@@ -42,7 +42,7 @@
                 <td>
 
                     <form action="borrarAnuncio" method="post">
-                        <input type="hidden" name="id" value=<s:property value="idAnuncio" />/>
+                        <input type="hidden" name="id" value="<s:property value="idAnuncio"/>"/>
                         <input type="submit" name="botonBorrar" value="Borrar" class="btn btn-primary btn-block"/>
                     </form>
                 </td>

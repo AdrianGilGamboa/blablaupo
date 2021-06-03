@@ -61,9 +61,6 @@ public class crearSeguro extends ActionSupport {
         this.descuento = descuento;
     }
 
-   
-     
-    
     public crearSeguro() {
     }
     

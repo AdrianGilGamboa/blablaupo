@@ -16,28 +16,28 @@
                     <h2 class="text-info">Pon tu anuncio</h2>
                 </div>
             <s:form name="RegistroAnuncio" action="registrarAnuncio" >
-                <s:a href="/blablaupo/vistas/inicio.jsp">Volver</s:a>
+                <s:a href="/blablaupo/vistas/GestionAnuncio/verAnuncios.jsp">Volver</s:a>
                     <div class="form-group">
                     <s:label value="Coste"></s:label>
-                    <s:textfield name="coste" label="Coste" cssClass="form-control"></s:textfield>
+                    <s:textfield name="coste" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
                     <s:label value="Anunciante"></s:label>
-                    <s:textfield name="anunciante" value="%{#session.dni}" label="Anunciante" cssClass="form-control"></s:textfield>
+                    <s:textfield name="anunciante" value="%{#session.dni}" cssClass="form-control"></s:textfield>
                     </div>
                     <div class="form-group">
                     <s:label value="Fecha de inicio"></s:label>
 
-                    <s:textfield name="fechaInicio" label="Fecha de inicio" cssClass="form-control" ></s:textfield>
+                    <s:textfield name="fechaInicio" cssClass="form-control" ></s:textfield>
                     </div>
                     <div class="form-group">
                     <s:label value="Fecha de fin"></s:label>
 
-                    <s:textfield name="fechaFin" label="Fecha de fin" cssClass="form-control" ></s:textfield>
+                    <s:textfield name="fechaFin" cssClass="form-control" ></s:textfield>
                     </div>
                     <div class="form-group">
                    <s:label value="Multimedia"></s:label>
-                   <s:textfield name="multimedia" cssClass="form-control" label="Multimedia"></s:textfield>
+                   <s:textfield name="multimedia" cssClass="form-control" ></s:textfield>
                     </div>
                 <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
             </s:form>

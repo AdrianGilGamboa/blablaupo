@@ -23,11 +23,10 @@ public class eliminarAnuncio extends ActionSupport {
     }
     
     public String execute() throws Exception {
-        /*
+        Anuncios a = new Anuncios();
         AnunciosDAO anuncioDAO = new AnunciosDAO();
-        System.out.println("EL ID: "+getId());
-        Anuncios anuncio = anuncioDAO.read(this.getId());
-                //anuncioDAO.delete(anuncio);*/
+        Anuncios anuncio = anuncioDAO.read(Integer.parseInt(getId()));
+        anuncioDAO.delete(anuncio);
         return SUCCESS;
         
     }
