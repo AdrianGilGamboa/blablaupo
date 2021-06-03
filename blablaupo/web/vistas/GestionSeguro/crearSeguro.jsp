@@ -2,36 +2,42 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 
 <html>
-    <head>                        
+     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Crear Seguro</title>
+        <s:head/>
+        <title>Registro</title>
         <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
         </head>
         <body>
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Pon tu seguro</h2>
+                    <h2 class="text-info">Crea un seguro</h2>
                 </div>
-            <s:form name="RegistroSeguro" action="registrarSeguro" >
-                <s:a href="/blablaupo/vistas/inicio.jsp">Volver</s:a>
-                    <div class="form-group">
-                    <s:label value="Empresa"></s:label>
-                    <s:textfield name="empresa" label="Empresa" cssClass="form-control"></s:textfield>
-                    </div>
-                    <div class="form-group">
-                    <s:label value="Tipo"></s:label>
-                    <s:textfield name="tipo"  label="Tipo" cssClass="form-control"></s:textfield>
-                    </div>
-                    <div class="form-group">
-                    <s:label value="Descripcion"></s:label>
-
-                    <s:textfield name="descripcion" label="Descripcion" cssClass="form-control" ></s:textfield>
-                    </div>
-                   
-                <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
-            </s:form>
-        </div>
-
-    </body>
+            <s:form name="Registro" action="registroUsuario" cssStyle="width:100%;">
+                <s:label value="Nombre"></s:label>
+                <s:textfield name="nombre" cssClass="form-control"></s:textfield>
+                <s:label value="Apellidos"></s:label>
+                <s:textfield name="apellidos" cssClass="form-control"></s:textfield>
+                <s:label value="Contraseña"></s:label>
+                <s:password name="password" cssClass="form-control"></s:password>
+                <s:label value="Email"></s:label>
+                <s:textfield name="email" cssClass="form-control"></s:textfield>
+                <s:label value="DNI"></s:label>
+                <s:textfield name="dni" cssClass="form-control"></s:textfield>
+                <s:label value="Teléfono"></s:label>
+                <s:textfield name="telefono" cssClass="form-control"></s:textfield>
+                <s:label value="¿Tienes coche?"></s:label>
+                    <s:radio name="tipo" list="{'Si','No'}" cssClass="radio-form"></s:radio>     
+                </div>
+            <s:submit name="registrar" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
+                <p style="text-align: center; margin-top: 5%; margin-bottom: 0;">
+                <s:text name="¿Ya tienes cuenta? "></s:text><s:a href="login.jsp">Iniciar Sesión</s:a>
+                </p>
+        </s:form>
+    </div>
+    <div class="container" style="margin-top: 3%" >
+        <img src="/blablaupo/vistas/logo.png" class="logo"/>
+    </div>
+</body>
 </html>
 
