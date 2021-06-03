@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package action.usuario;
 
 import static com.opensymphony.xwork2.Action.ERROR;
@@ -60,30 +64,38 @@ public class accionLogin extends ActionSupport {
     public accionLogin() {
     }
 
-    public String login() {
-        u = dao.comprobarLogin(this.getEmail(), this.getPassword());
-        if (u == null) {
-            addFieldError("login", getText("login.login"));
+     public String login(){
+         u = dao.comprobarLogin(this. getEmail(),this.getPassword());
+           if(u== null){
+            addFieldError("login", getText("login.login"));                  
             return ERROR;
 
-        } else {
+             }
+           
 
-            session.setAttribute("logado", "si");
-            session.setAttribute("usuario", u);
-            return SUCCESS;
-        }
+         else{
 
-    }
+               session.setAttribute("logado", "si");
+               session.setAttribute("usuario", u);
+               return SUCCESS;
+           }
 
+   
+
+    }   
+  
+
+     
+     }
     public String execute() throws Exception {
         return SUCCESS;
     }
-
-    public void validate() {
-        if (this.getEmail().equals("")) {
+    
+    public void validate() { 
+        if (this.getEmail().equals("")){
             addFieldError("email", getText("login.email"));
         }
-        if (this.getPassword().equals("")) {
+        if (this.getPassword().equals("")){
             addFieldError("password", getText("login.password"));
         }
     }
