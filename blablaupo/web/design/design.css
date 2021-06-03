@@ -81,7 +81,10 @@ p {
         max-width: 540px;
     }
 }
-
+.logo{
+    width:100%;
+    margin-left: 4%;
+}
 .container {
     width: 100%;
     padding-right: 15px;
@@ -123,13 +126,12 @@ label {
 
 .radio-form {
     align-content: center;
-    text-align: center;
     display: initial;
     margin-bottom: .5rem;
     text-align: center;
     font-weight: bold;
     margin-top: 2%;
-    margin: 5%;
+    margin: 3%;
 }
 
 .group-radio{
