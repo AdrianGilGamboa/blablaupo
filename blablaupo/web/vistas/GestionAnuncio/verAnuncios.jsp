@@ -49,7 +49,7 @@
                 <td>
 
                     <form action="modificarAnuncio" method="post">
-                        <input type="hidden" name="id" value=<s:property value="idAnuncio" /> />
+                        <input type="hidden" name="id" value="<s:property value="idAnuncio"/>" />
                         <input type="submit" name="botonModificar" value="Modificar" class="btn btn-primary btn-block"/>
                     </form>
                 </td>

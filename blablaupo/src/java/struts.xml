@@ -62,6 +62,16 @@
          <action name="registrarSeguro" class="action.seguro.crearSeguro" method="crearSeguro">
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
         </action>
+        
+        <action name="verSeguros" class="action.seguro.verSeguro" method="verSeguros">
+            <result name="success">/vista/GestionSeguro/verSeguros.jsp</result>
+        </action>
+        <action name="borrarSeguro" class="action.seguro.eliminarSeguro">
+            <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
+        </action>
+        <action name="modificarSeguro" class="action.seguro.modificarSeguro">
+            <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
+        </action>
     </package>
     
     

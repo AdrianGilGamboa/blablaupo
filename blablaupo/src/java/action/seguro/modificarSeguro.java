@@ -8,20 +8,29 @@ package action.seguro;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.SegurosDAO;
 import entidades.Seguros;
-import java.util.HashSet;
-import java.util.Set;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-
-
-public class crearSeguro extends ActionSupport {
-     private Integer idSeguro;
+/**
+ *
+ * @author manum
+ */
+public class modificarSeguro extends ActionSupport {
+     String id;
+     int ide;
      private String empresa;
      private String tipo;
      private float descuento;
      private SegurosDAO sDao = new SegurosDAO();
-         HttpSession session = ServletActionContext.getRequest().getSession(false);
+   HttpSession session = ServletActionContext.getRequest().getSession(false);
+
+    public int getIde() {
+        return ide;
+    }
+
+    public void setIde(int ide) {
+        this.ide = ide;
+    }
 
     public HttpSession getSession() {
         return session;
@@ -30,22 +39,12 @@ public class crearSeguro extends ActionSupport {
     public void setSession(HttpSession session) {
         this.session = session;
     }
-
-    public SegurosDAO getsDao() {
-        return sDao;
+    public String getId() {
+        return id;
     }
 
-    public void setsDao(SegurosDAO sDao) {
-        this.sDao = sDao;
-    }
-     
-     
-    public Integer getIdSeguro() {
-        return idSeguro;
-    }
-
-    public void setIdSeguro(Integer idSeguro) {
-        this.idSeguro = idSeguro;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getEmpresa() {
@@ -72,21 +71,26 @@ public class crearSeguro extends ActionSupport {
         this.descuento = descuento;
     }
 
-    public crearSeguro() {
+    public SegurosDAO getsDao() {
+        return sDao;
+    }
+
+    public void setsDao(SegurosDAO sDao) {
+        this.sDao = sDao;
     }
     
-    public String crearSeguro(){
-        
+     
+    public modificarSeguro() {
+    }
+    
+    public String execute() throws Exception {
+        SegurosDAO seguroDAO = new SegurosDAO();
         Seguros seguro = new Seguros();
+        seguro = seguroDAO.read(Integer.parseInt(getId()));
         seguro.setTipo(getTipo());
         seguro.setDescuento(getDescuento());
         seguro.setEmpresa(getEmpresa());
-        sDao.create(seguro);
-        session.setAttribute("idS", getIdSeguro());
-        return SUCCESS;
-    }
-     
-    public String execute() throws Exception {
+        sDao.update(seguro);
         return SUCCESS;
     }
     
