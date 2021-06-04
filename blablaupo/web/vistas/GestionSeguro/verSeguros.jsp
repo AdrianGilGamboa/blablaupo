@@ -25,7 +25,7 @@
                 <th>ID</th>
                 <th>Empresa</th>
                 <th>Tipo</th>
-                <th>Descuento</th>
+                <th>Descripcion</th>
                 <th><p align= center>Borrar</p></th>
                 <th><p align= center>Modificar</p></th>
 
@@ -35,7 +35,7 @@
                 <td><s:property value="idSeguro" /></td>
                 <td><s:property value="empresa" /></td>
                 <td><s:property value="tipo" /></td>
-                <td><s:property value="descuento" /></td>
+                <td><s:property value="descripcion" /></td>
                 <td>
 
                     <form action="borrarSeguro" method="post">

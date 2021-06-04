@@ -47,6 +47,7 @@
                     </form>
                 </td>
                 <td>
+                    <a href="../../../src/java/action/seguro/crearSeguro.java"></a>
 
                     <form action="modificarAnuncio" method="post">
                         <input type="hidden" name="id" value="<s:property value="idAnuncio"/>" />

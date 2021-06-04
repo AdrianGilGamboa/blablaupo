@@ -14,22 +14,22 @@ public class Seguros  implements java.io.Serializable {
      private Integer idSeguro;
      private String empresa;
      private String tipo;
-     private float descuento;
+     private String descripcion;
      private Set viajeses = new HashSet(0);
 
     public Seguros() {
     }
 
 	
-    public Seguros(String empresa, String tipo, float descuento) {
+    public Seguros(String empresa, String tipo, String descripcion) {
         this.empresa = empresa;
         this.tipo = tipo;
-        this.descuento = descuento;
+        this.descripcion = descripcion;
     }
-    public Seguros(String empresa, String tipo, float descuento, Set viajeses) {
+    public Seguros(String empresa, String tipo, String descripcion, Set viajeses) {
        this.empresa = empresa;
        this.tipo = tipo;
-       this.descuento = descuento;
+       this.descripcion = descripcion;
        this.viajeses = viajeses;
     }
    
@@ -54,13 +54,15 @@ public class Seguros  implements java.io.Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public float getDescuento() {
-        return this.descuento;
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
-    public void setDescuento(float descuento) {
-        this.descuento = descuento;
-    }
     public Set getViajeses() {
         return this.viajeses;
     }

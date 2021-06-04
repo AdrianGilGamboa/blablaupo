@@ -20,7 +20,7 @@ public class modificarSeguro extends ActionSupport {
      int ide;
      private String empresa;
      private String tipo;
-     private float descuento;
+     private String descripcion;
      private SegurosDAO sDao = new SegurosDAO();
    HttpSession session = ServletActionContext.getRequest().getSession(false);
 
@@ -63,13 +63,15 @@ public class modificarSeguro extends ActionSupport {
         this.tipo = tipo;
     }
 
-    public float getDescuento() {
-        return descuento;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescuento(float descuento) {
-        this.descuento = descuento;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
+
+    
 
     public SegurosDAO getsDao() {
         return sDao;
@@ -88,7 +90,7 @@ public class modificarSeguro extends ActionSupport {
         Seguros seguro = new Seguros();
         seguro = seguroDAO.read(Integer.parseInt(getId()));
         seguro.setTipo(getTipo());
-        seguro.setDescuento(getDescuento());
+        seguro.setDescripcion(getDescripcion());
         seguro.setEmpresa(getEmpresa());
         sDao.update(seguro);
         return SUCCESS;
