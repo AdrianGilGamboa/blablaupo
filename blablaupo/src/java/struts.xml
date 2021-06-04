@@ -73,6 +73,9 @@
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
         </action>
         <action name="modificarSeguro" class="action.seguro.modificarSeguro">
+            <result>/vistas/GestionSeguro/modificarSeguro.jsp</result>
+        </action>
+        <action name="editarSeguro" class="action.seguro.modificarSeguro" method="editar">
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
         </action>
     </package>

@@ -38,17 +38,20 @@
                 <td><s:property value="descripcion" /></td>
                 <td>
 
-                    <form action="borrarSeguro" method="post">
-                        <input type="hidden" name="id" value="<s:property value="idSeguro"/>"/>
-                        <input type="submit" name="botonBorrar" value="Borrar" class="btn btn-primary btn-block"/>
-                    </form>
+                    <s:form action="borrarSeguro" method="post" theme="simple">
+                        <s:hidden name="id" value="%{idSeguro}"></s:hidden>
+                        <s:submit name="botonBorrar" value="Borrar" cssClass="btn btn-primary btn-block"></s:submit>
+                    </s:form>
                 </td>
                 <td>
                     
-                    <form action="modificarSeguro.jsp" method="post">
-                        <input type="hidden" name="id" value=<s:property value="idSeguro"/>/>
-                        <input type="submit" name="botonModificar" value="Modificar" class="btn btn-primary btn-block"/>
-                    </form>
+                    <s:form action="modificarSeguro" method="post" theme="simple">
+                        <s:hidden name="idSeguro" value="%{idSeguro}"></s:hidden>
+                        <s:hidden name="empresa" value="%{empresa}"></s:hidden>
+                        <s:hidden name="tipo" value="%{tipo}"></s:hidden>
+                        <s:hidden name="descripcion" value="%{descripcion}"></s:hidden>
+                        <s:submit name="botonModificar" value="Modificar" cssClass="btn btn-primary btn-block"></s:submit>
+                    </s:form>
                 </td>
 
             </tr>

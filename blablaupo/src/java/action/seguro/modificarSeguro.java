@@ -16,21 +16,23 @@ import org.apache.struts2.ServletActionContext;
  * @author manum
  */
 public class modificarSeguro extends ActionSupport {
-     String id;
-     int ide;
+     
+     int idSeguro;
      private String empresa;
      private String tipo;
      private String descripcion;
      private SegurosDAO sDao = new SegurosDAO();
    HttpSession session = ServletActionContext.getRequest().getSession(false);
 
-    public int getIde() {
-        return ide;
+    public int getIdSeguro() {
+        return idSeguro;
     }
 
-    public void setIde(int ide) {
-        this.ide = ide;
+    public void setIdSeguro(int idSeguro) {
+        this.idSeguro = idSeguro;
     }
+
+    
 
     public HttpSession getSession() {
         return session;
@@ -38,13 +40,6 @@ public class modificarSeguro extends ActionSupport {
 
     public void setSession(HttpSession session) {
         this.session = session;
-    }
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getEmpresa() {
@@ -84,15 +79,19 @@ public class modificarSeguro extends ActionSupport {
      
     public modificarSeguro() {
     }
-    
+    public String editar(){
+        SegurosDAO daoSeguro = new SegurosDAO();
+        Seguros s = daoSeguro.read(getIdSeguro());            
+            s.setEmpresa(getEmpresa());
+            s.setTipo(getTipo());
+            s.setDescripcion(getDescripcion());
+            daoSeguro.update(s);  
+            
+            return SUCCESS;
+        
+    }
     public String execute() throws Exception {
-        SegurosDAO seguroDAO = new SegurosDAO();
-        Seguros seguro = new Seguros();
-        seguro = seguroDAO.read(Integer.parseInt(getId()));
-        seguro.setTipo(getTipo());
-        seguro.setDescripcion(getDescripcion());
-        seguro.setEmpresa(getEmpresa());
-        sDao.update(seguro);
+       
         return SUCCESS;
     }
     
