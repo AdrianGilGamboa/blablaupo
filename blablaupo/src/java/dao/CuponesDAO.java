@@ -29,7 +29,7 @@ public class CuponesDAO {
     public Cupones read(String pk) {
         sesion = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Cupones where numero_cupon='" + pk + "'");
+        Query q = sesion.createQuery("from Cupones where numero_cupon='" + pk + "'");        
         Cupones a = (Cupones) q.uniqueResult();
         tx.commit();
         return a;

@@ -1,4 +1,6 @@
 
+<%@page import="java.util.List"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 
@@ -15,13 +17,13 @@
         <s:include value="../header.jsp"></s:include>
         <s:action name="mostrarCupones"></s:action>
         <h2 class="text-info">Cupones</h2>
-        <form action="/blablaupo/vistas/GestionCupon/crearCupon.jsp">
-            <input type="submit" name="crear" value="Crea tu Cupón!" class="btn btn-primary btn-block">
-        </form>
+        <s:form action="/blablaupo/vistas/GestionCupon/crearCupon.jsp" theme="simple">
+            <s:submit name="crear" value="Crea tu Cupón!" cssClass="btn btn-primary btn-block"></s:submit>
+        </s:form>
         <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
             <tr>  
                 <th>Codigo Cupón</th>
-                <th>Descripción</th>
+                <th>Porcentaje Descuento</th>
                 <th>Fecha de inicio</th>
                 <th>Fecha de fin</th>
                 <th><p align= center>Borrar</p></th>
@@ -31,23 +33,24 @@
 
             <tr>
                 <td><s:property value="numeroCupon" /></td>
-                <td><s:property value="descCupon" /></td>
+                <td><s:property value="descCupon" /> %</td>
                 <td><s:property value="fechaInicio" /></td>
                 <td><s:property value="fechaFin" /></td>
                 <td>
-                    <form action="borrarCupon" method="post">
-                        <input type="hidden" name="codigo" value="<s:property value="numeroCupon" />"/>
-                        <input type="submit" name="botonBorrar" value="Borrar" class="btn btn-primary btn-block"/>
-                    </form>
+                    <s:form action="borrarCupon" method="post" theme="simple">
+                    <s:hidden name="codigo" value="%{numeroCupon}"></s:hidden>
+                    <s:submit name="botonBorrar" value="Borrar" cssClass="btn btn-primary btn-block"></s:submit>
+                    </s:form>
                 </td>
                 <td>
-
-                    <form action="modificarCupon" method="post">
-                        <input type="hidden" name="codigo" value=<s:property value="numeroCupon" /> />
-                        <input type="submit" name="botonModificar" value="Modificar" class="btn btn-primary btn-block"/>
-                    </form>
+                    <s:form  action="modificarCupon" theme="simple">
+                        <s:hidden name="numeroCupon" value="%{numeroCupon}" ></s:hidden>
+                        <s:hidden name="descCupon" value="%{descCupon}" ></s:hidden>
+                        <s:hidden name="fechaInicio" value="%{fechaInicio}" ></s:hidden>
+                        <s:hidden name="fechaFin" value="%{fechaFin}" ></s:hidden>
+                        <s:submit name="botonModificar" value="Modificar" cssClass="btn btn-primary btn-block"/>
+                    </s:form>
                 </td>
-
             </tr>
         </s:iterator>
     </table>

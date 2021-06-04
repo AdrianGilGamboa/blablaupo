@@ -53,7 +53,10 @@
        <action name="borrarAnuncio" class="action.anuncio.eliminarAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
-        <action name="modificarAnuncio" class="action.anuncio.modificarAnuncio" method="modificarAnuncio">
+        <action name="modificarAnuncio" class="action.anuncio.modificarAnuncio">
+            <result>/vistas/GestionAnuncio/modificarAnuncio.jsp</result>
+        </action>
+        <action name="editarAnuncio" class="action.anuncio.modificarAnuncio" method="editar">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
     </package>
@@ -85,6 +88,12 @@
             <result name="success">/vistas/GestionCupon/crearCupon.jsp</result>
         </action>
         <action name="borrarCupon" class="action.cupon.eliminarCupon">
+            <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
+        </action>
+        <action name="modificarCupon" class="action.cupon.modificarCupon">
+            <result>/vistas/GestionCupon/modificarCupon.jsp</result>
+        </action>
+        <action name="editarCupon" class="action.cupon.modificarCupon" method="editar">
             <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
         </action>
     </package>

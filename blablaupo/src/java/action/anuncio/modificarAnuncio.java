@@ -8,7 +8,9 @@ package action.anuncio;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.AnunciosDAO;
+import dao.CuponesDAO;
 import entidades.Anuncios;
+import entidades.Cupones;
 import freemarker.core.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,12 +19,8 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-/**
- *
- * @author manum
- */
 public class modificarAnuncio extends ActionSupport {
-   int id;
+   int idAnuncio;
     private float coste;
     private String anunciante;
     private Date fechaInicio;
@@ -34,14 +32,15 @@ public class modificarAnuncio extends ActionSupport {
     private String fotoPerfilFileName;
     private List<Anuncios> lista = new ArrayList();
 
-    public int getId() {
-        return id;
+    public int getIdAnuncio() {
+        return idAnuncio;
     }
 
-    public void setId(){
-        this.id = id;
+    public void setIdAnuncio(int idAnuncio) {
+        this.idAnuncio = idAnuncio;
     }
 
+  
 
     public AnunciosDAO getAnuncioDAO() {
         return anuncioDAO;
@@ -127,27 +126,19 @@ public class modificarAnuncio extends ActionSupport {
     }
     
     
-    public String modificarAnuncio() throws java.text.ParseException{
-        List a = new ArrayList();
-         a = (List) session.getAttribute("lista");
- 
-        Anuncios anuncio = new Anuncios();
-        for(int i = 0; i<a.size(); i++){
-            anuncio = (Anuncios) a.get(i);
-            System.out.println("-------------------"+anuncio.getIdAnuncio());
-            if(anuncio.getIdAnuncio() == this.getId()){
-                  anuncio.setCoste(getCoste());
-        SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
-        anuncio.setFechaInicio(parseador.parse(parseador.format(getFechaInicio())));
-        anuncio.setFechaFin(parseador.parse(parseador.format(getFechaFin())));
-        anuncio.setAnunciante(getAnunciante());
-        anuncio.setMultimedia(getMultimedia());
-        anuncioDAO.update(anuncio);
-            }
-        }
-        
-      
-        return SUCCESS;
+    public String editar(){     
+        AnunciosDAO daoAnuncio = new AnunciosDAO();
+        System.out.println("FECHA INICIO_____________");
+        Anuncios a = daoAnuncio.read(getIdAnuncio());            
+            a.setCoste(getCoste());
+            a.setAnunciante(getAnunciante());
+            a.setFechaInicio(getFechaInicio());
+            a.setFechaFin(getFechaFin());
+            a.setMultimedia(getMultimedia());
+            
+            daoAnuncio.update(a);  
+            
+            return SUCCESS;
     }
     public String execute() throws Exception {
         return SUCCESS;    }
