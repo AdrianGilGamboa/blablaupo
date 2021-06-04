@@ -15,7 +15,7 @@
         <s:include value="../header.jsp"></s:include>
         <s:action name="mostrarCupones"></s:action>
         <h2 class="text-info">Cupones</h2>
-        <form action="/blablaupo/vistas/GestionAnuncio/crearAnuncio.jsp">
+        <form action="/blablaupo/vistas/GestionCupon/crearCupon.jsp">
             <input type="submit" name="crear" value="Crea tu Cupón!" class="btn btn-primary btn-block">
         </form>
         <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
@@ -35,15 +35,15 @@
                 <td><s:property value="fechaInicio" /></td>
                 <td><s:property value="fechaFin" /></td>
                 <td>
-                    <form action="borrarAnuncio" method="post">
-                        <input type="hidden" name="id" value=<s:property value="idAnuncio" />/>
+                    <form action="borrarCupon" method="post">
+                        <input type="hidden" name="codigo" value="<s:property value="numeroCupon" />"/>
                         <input type="submit" name="botonBorrar" value="Borrar" class="btn btn-primary btn-block"/>
                     </form>
                 </td>
                 <td>
 
-                    <form action="/blablaupo/vistas/GestionAnuncio/modificarAnuncio.jsp" method="post">
-                        <input type="hidden" name="id" value=<s:property value="idAnuncio" /> />
+                    <form action="modificarCupon" method="post">
+                        <input type="hidden" name="codigo" value=<s:property value="numeroCupon" /> />
                         <input type="submit" name="botonModificar" value="Modificar" class="btn btn-primary btn-block"/>
                     </form>
                 </td>

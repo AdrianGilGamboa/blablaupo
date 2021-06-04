@@ -8,7 +8,7 @@
             <column name="NUMERO_CUPON" />
             <generator class="assigned" />
         </id>
-        <property name="descCupon" type="string">
+        <property name="descCupon" type="float">
             <column name="DESC_CUPON" not-null="true" />
         </property>
         <property name="fechaFin" type="timestamp">

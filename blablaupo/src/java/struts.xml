@@ -73,12 +73,18 @@
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
         </action>
     </package>
-    
-    
-    
 
     <package name="cuponPackage" extends="struts-default">
          <action name="mostrarCupones" class="action.cupon.accionCupon">
+            <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
+        </action>
+        <action name="registrarCupon" class="action.cupon.crearCupon">
+            <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
+        </action>
+        <action name="creaCodigo" class="action.cupon.creaCodigo">
+            <result name="success">/vistas/GestionCupon/crearCupon.jsp</result>
+        </action>
+        <action name="borrarCupon" class="action.cupon.eliminarCupon">
             <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
         </action>
     </package>

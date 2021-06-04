@@ -13,7 +13,7 @@ public class Cupones  implements java.io.Serializable {
 
 
      private String numeroCupon;
-     private String descCupon;
+     private float descCupon;
      private Date fechaFin;
      private Date fechaInicio;
      private Set reservases = new HashSet(0);
@@ -22,13 +22,13 @@ public class Cupones  implements java.io.Serializable {
     }
 
 	
-    public Cupones(String numeroCupon, String descCupon, Date fechaFin, Date fechaInicio) {
+    public Cupones(String numeroCupon, float descCupon, Date fechaFin, Date fechaInicio) {
         this.numeroCupon = numeroCupon;
         this.descCupon = descCupon;
         this.fechaFin = fechaFin;
         this.fechaInicio = fechaInicio;
     }
-    public Cupones(String numeroCupon, String descCupon, Date fechaFin, Date fechaInicio, Set reservases) {
+    public Cupones(String numeroCupon, float descCupon, Date fechaFin, Date fechaInicio, Set reservases) {
        this.numeroCupon = numeroCupon;
        this.descCupon = descCupon;
        this.fechaFin = fechaFin;
@@ -43,11 +43,11 @@ public class Cupones  implements java.io.Serializable {
     public void setNumeroCupon(String numeroCupon) {
         this.numeroCupon = numeroCupon;
     }
-    public String getDescCupon() {
+    public float getDescCupon() {
         return this.descCupon;
     }
     
-    public void setDescCupon(String descCupon) {
+    public void setDescCupon(float descCupon) {
         this.descCupon = descCupon;
     }
     public Date getFechaFin() {
