@@ -26,7 +26,6 @@
                     <s:textfield name="marca" value="%{#session.coche.marca}"  cssClass="form-control"></s:textfield>
                     <s:label value="Dni del conductor "></s:label> 
                     <s:textfield name="dni" value="%{#session.usuario.dni}"  cssClass="form-control" readonly="true"></s:textfield>
-
                 <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
             </s:form>
         </div>

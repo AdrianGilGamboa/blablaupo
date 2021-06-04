@@ -17,7 +17,7 @@
 
             <h2 class="text-info">Anuncios</h2>
         <s:form action="/vistas/GestionAnuncio/crearAnuncio.jsp" theme="simple">
-            <s:submit name="crear" value="Crea tu anuncio!"  cssClass="btn btn-primary btn-block"></s:submit>
+            <s:submit name="crear" value="Crear anuncio!"  cssClass="btn btn-primary btn-block"></s:submit>
         </s:form>
         <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
             <tr>  

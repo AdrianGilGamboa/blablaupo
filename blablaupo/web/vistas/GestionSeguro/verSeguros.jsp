@@ -18,7 +18,7 @@
 
             <h2 class="text-info">Seguros</h2>
         <form action="/blablaupo/vistas/GestionSeguro/crearSeguro.jsp">
-            <input type="submit" name="crear" value="Crea un seguro"  class="btn btn-primary btn-block">
+            <input type="submit" name="crear" value="Crear Seguro!"  class="btn btn-primary btn-block">
         </form>
         <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
             <tr>  

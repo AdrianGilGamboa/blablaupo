@@ -2,7 +2,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 
 <html>
-     <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <s:head/>
         <title>Registro</title>
@@ -11,23 +11,22 @@
         <body>
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Crea un seguro</h2>
+                    <h2 class="text-info">Nuevo Seguro</h2>
                 </div>
             <s:form name="Registro" action="registrarSeguro" cssStyle="width:100%;">
+                <s:a href="/blablaupo/vistas/GestionSeguro/verSeguros.jsp">Volver</s:a>
                 <s:label value="Empresa"></s:label>
                 <s:textfield name="empresa" cssClass="form-control"></s:textfield>
                 <s:label value="Tipo"></s:label>
                 <s:textfield name="tipo" cssClass="form-control"></s:textfield>
                 <s:label value="Descripcion"></s:label>
                 <s:textfield name="descripcion" cssClass="form-control"></s:textfield>   
-                </div>
-            <s:submit name="crear" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
-              
-        </s:form>
-    </div>
-    <div class="container" style="margin-top: 3%" >
-        <img src="/blablaupo/vistas/logo.png" class="logo"/>
-    </div>
-</body>
+                <s:submit name="crear" value="Crear Seguro" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
+            </s:form>
+        </div>
+        <div class="container" style="margin-top: 3%" >
+            <img src="/blablaupo/vistas/logo.png" class="logo"/>
+        </div>
+    </body>
 </html>
 

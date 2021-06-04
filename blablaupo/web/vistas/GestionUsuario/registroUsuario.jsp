@@ -11,7 +11,7 @@
         <body>
             <div class="container">
                 <div class="block-heading" style="margin-left: 3%;">
-                    <h2 class="text-info">Registro</h2>
+                    <h2 class="text-info">Registro Usuario</h2>
                 </div>
             <s:form name="Registro" action="registroUsuario" cssStyle="width:100%;">
                 <s:label value="Nombre"></s:label>

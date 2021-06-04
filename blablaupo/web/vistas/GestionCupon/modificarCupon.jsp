@@ -12,7 +12,7 @@
         <body>
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Modificar cupón</h2>
+                    <h2 class="text-info">Modificar Cupón</h2>
                 </div>
             <s:form name="RegistroCupon" action="editarCupon" >
                 <s:a href="/blablaupo/vistas/GestionCupon/verCupones.jsp">Volver</s:a>    
@@ -25,7 +25,7 @@
                     <s:textfield name="fechaInicio" cssClass="form-control" ></s:textfield>
                     <s:label value="Fecha de fin"></s:label>
                     <s:textfield name="fechaFin" cssClass="form-control" ></s:textfield>               
-                <s:submit name="aceptar" value="Modificar" cssClass="btn btn-primary btn-block"></s:submit>
+                <s:submit name="aceptar" value="Modificar" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
             </s:form>
         </div>
 

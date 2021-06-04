@@ -13,7 +13,7 @@
         <body>
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Modifica tu anuncio</h2>
+                    <h2 class="text-info">Modificar Anuncio</h2>
                 </div>
             <s:form name="editarAnuncio" action="editarAnuncio" >
                 <s:a href="/blablaupo/vistas/GestionAnuncio/verAnuncios.jsp">Volver</s:a>
@@ -28,7 +28,7 @@
                     <s:textfield name="fechaFin" cssClass="form-control" ></s:textfield>
                    <s:label value="Multimedia"></s:label>
                    <s:textfield name="multimedia" cssClass="form-control" ></s:textfield>
-                <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
+                <s:submit name="aceptar" value="Modificar" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
             </s:form>
         </div>
 

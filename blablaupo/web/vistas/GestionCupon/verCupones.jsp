@@ -18,14 +18,14 @@
         <s:action name="mostrarCupones"></s:action>
         <h2 class="text-info">Cupones</h2>
         <s:form action="/blablaupo/vistas/GestionCupon/crearCupon.jsp" theme="simple">
-            <s:submit name="crear" value="Crea tu Cupón!" cssClass="btn btn-primary btn-block"></s:submit>
+            <s:submit name="crear" value="Crear Cupón!" cssClass="btn btn-primary btn-block"></s:submit>
         </s:form>
         <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
             <tr>  
                 <th>Codigo Cupón</th>
                 <th>Porcentaje Descuento</th>
-                <th>Fecha de inicio</th>
-                <th>Fecha de fin</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
                 <th><p align= center>Borrar</p></th>
                 <th><p align= center>Modificar</p></th>
 
