@@ -13,16 +13,17 @@
                 <div class="block-heading">
                     <h2 class="text-info">Modificar Seguro</h2>
                 </div>
-            <s:form name="Modificar" action="modificarSeguro" cssStyle="width:100%;">
+
+            <s:form name="Modificar" action="editarSeguro" cssStyle="width:100%;">
                 <s:a href="/blablaupo/vistas/GestionSeguro/verSeguros.jsp">Volver</s:a>
+                <s:hidden value="%{idSeguro}" name="idSeguro"></s:hidden>
                 <s:label value="Empresa"></s:label>
                 <s:textfield name="empresa" cssClass="form-control"></s:textfield>
                 <s:label value="Tipo"></s:label>
                 <s:textfield name="tipo" cssClass="form-control"></s:textfield>
-                <s:label value="Descuento"></s:label>
-                <s:textfield name="descuento" cssClass="form-control"></s:textfield>   
-            <input type="hidden" name="id" value="<s:property value="idSeguro"/>"/>
-            <s:submit name="modificar" value="Modificar" cssClass="btn btn-primary btn-block" cssStyle="margin-top:5%;"></s:submit>
+                <s:label value="Descripcion"></s:label>
+                <s:textfield name="descripcion" cssClass="form-control"></s:textfield>   
+            <s:submit name="aceptar" value="Aceptar" cssClass="btn btn-primary btn-block"></s:submit>
               
         </s:form>
     </div>
