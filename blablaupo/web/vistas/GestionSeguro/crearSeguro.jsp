@@ -18,8 +18,8 @@
                 <s:textfield name="empresa" cssClass="form-control"></s:textfield>
                 <s:label value="Tipo"></s:label>
                 <s:textfield name="tipo" cssClass="form-control"></s:textfield>
-                <s:label value="Descuento"></s:label>
-                <s:textfield name="descuento" cssClass="form-control"></s:textfield>   
+                <s:label value="Descripcion"></s:label>
+                <s:textfield name="descripcion" cssClass="form-control"></s:textfield>   
                 </div>
             <s:submit name="crear" value="Registrar" cssClass="btn btn-primary btn-block"></s:submit>
               
