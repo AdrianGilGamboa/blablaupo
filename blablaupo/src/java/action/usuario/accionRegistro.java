@@ -141,7 +141,7 @@ public class accionRegistro extends ActionSupport {
 
     
 
-   /* public void validate() {;
+   public void validate() {;
         if (this.getNombre().equals("")) {
             addFieldError("nombre", getText("registrar.nombre"));
         }
@@ -168,7 +168,7 @@ public class accionRegistro extends ActionSupport {
         if (this.getTipo() == null) {
             addFieldError("tipo", getText("registrar.coche"));
         }
-    }*/
+   }
 
     public String execute() throws Exception {
         return SUCCESS;
