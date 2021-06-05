@@ -20,7 +20,7 @@
 
         <s:form action="/blablaupo/vistas/GestionCupon/crearCupon.jsp" theme="simple">
             <s:submit name="crear" value="Crear Cupón!" cssClass="btn btn-primary btn-block"></s:submit>
-
+        </s:form>
         <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
             <tr>  
                 <th>Codigo Cupón</th>

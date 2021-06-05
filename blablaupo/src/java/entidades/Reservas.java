@@ -17,21 +17,21 @@ public class Reservas  implements java.io.Serializable {
      private Usuarios usuarios;
      private Viajes viajes;
      private Date FReserva;
-     private int costeFinal;
+     private Float costeFinal;
      private Set valoracioneses = new HashSet(0);
 
     public Reservas() {
     }
 
 	
-    public Reservas(Cupones cupones, Usuarios usuarios, Viajes viajes, Date FReserva, int costeFinal) {
+    public Reservas(Cupones cupones, Usuarios usuarios, Viajes viajes, Date FReserva, Float costeFinal) {
         this.cupones = cupones;
         this.usuarios = usuarios;
         this.viajes = viajes;
         this.FReserva = FReserva;
         this.costeFinal = costeFinal;
     }
-    public Reservas(Cupones cupones, Usuarios usuarios, Viajes viajes, Date FReserva, int costeFinal, Set valoracioneses) {
+    public Reservas(Cupones cupones, Usuarios usuarios, Viajes viajes, Date FReserva, Float costeFinal, Set valoracioneses) {
        this.cupones = cupones;
        this.usuarios = usuarios;
        this.viajes = viajes;
@@ -75,11 +75,11 @@ public class Reservas  implements java.io.Serializable {
     public void setFReserva(Date FReserva) {
         this.FReserva = FReserva;
     }
-    public int getCosteFinal() {
+    public Float getCosteFinal() {
         return this.costeFinal;
     }
     
-    public void setCosteFinal(int costeFinal) {
+    public void setCosteFinal(Float costeFinal) {
         this.costeFinal = costeFinal;
     }
     public Set getValoracioneses() {

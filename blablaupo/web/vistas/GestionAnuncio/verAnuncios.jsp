@@ -36,8 +36,8 @@
                 <td><s:property value="idAnuncio" /></td>
                 <td><s:property value="coste" /> €</td>
                 <td><s:property value="anunciante" /></td>
-                <td><s:property value="fechaInicio" /></td>
-                <td><s:property value="fechaFin" /></td>
+                <td><s:date name="fechaInicio"  format="dd/MM/yyyy"/></td>
+                <td><s:date name="fechaFin"  format="dd/MM/yyyy"/></td>
                 <td><s:property value="multimedia" /></td>
                 <td>
 

@@ -49,5 +49,14 @@ public class SegurosDAO {
         sesion.delete(s);
         tx.commit();
     }
+    
+        public Seguros readTipo(String tipo){
+        sesion=HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx=sesion.beginTransaction();
+        Query q=sesion.createQuery("From Seguros where tipo='"+tipo+"'");
+        Seguros lp = (Seguros)q.uniqueResult();
+        tx.commit();
+        return lp;
+    }
 
 }

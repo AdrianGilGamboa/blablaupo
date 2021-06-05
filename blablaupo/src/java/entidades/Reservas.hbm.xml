@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <many-to-one name="cupones" class="entidades.Cupones" fetch="select">
-            <column name="NUMERO_CUPON" not-null="true" />
+            <column name="NUMERO_CUPON" not-null="false" />
         </many-to-one>
         <many-to-one name="usuarios" class="entidades.Usuarios" fetch="select">
             <column name="DNI_PASAJERO" length="20" not-null="true" />
@@ -20,7 +20,7 @@
         <property name="FReserva" type="timestamp">
             <column name="F_RESERVA" length="19" not-null="true" />
         </property>
-        <property name="costeFinal" type="int">
+        <property name="costeFinal" type="float">
             <column name="COSTE_FINAL" not-null="true" />
         </property>
         <set name="valoracioneses" table="valoraciones" inverse="true" lazy="true" fetch="select">

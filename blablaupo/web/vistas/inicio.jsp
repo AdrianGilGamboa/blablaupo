@@ -12,18 +12,42 @@
         <body>
         <s:if test="%{#session.logado=='si'}">
             <s:include value="header.jsp"></s:include>
-                <div class="cuerpo">
-                    <h1>1Hello World!</h1>
-                    <h1>2Hello World!</h1>
-                    <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
-                    <h1>Hello World!</h1>
-                    <h1>Hello World!</h1>
-                    <h1>Hello World!</h1>
-                    <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
-                    <h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1><h1>Hello World!</h1>
+            <s:action name="verViajes"></s:action>
+            <s:form action="/vistas/GestionViaje/crearViaje.jsp" theme="simple" cssStyle="margin-top: 5%;">
+                <s:submit name="crear" value="Crear Viaje!"  cssClass="btn btn-primary btn-block"></s:submit>
+            </s:form>
+                <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
+                    <tr>  
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Coste</th>
+                        <th>Fecha-Hora Salida</th>
+                        <th>Fecha-Hora Llegada</th>
+                        <th>Seguro</th>
+                        <th>Teléfono Conductor</th>
+                        <th><p align= center>Reservar Viaje</p></th>
 
+                    <s:iterator value="#session.viajes">
 
-                </div>     
+                    <tr>
+                        <td><s:property value="origen" /></td>
+                        <td><s:property value="destino" /></td>
+                        <td><s:property value="coste" /> €</td>
+                        <td><s:date name="horaSalida"  format="dd/MM/yyyy - HH:mm"/></td>
+                        <td><s:date name="horaLlegada"  format="dd/MM/yyyy - HH:mm"/></td>
+                        <td><s:property value="usuario.dni" /></td>
+                        <td><s:property value="seguros.idSeguro" /></td>
+                        <td>
+                            <s:form action="reservarViaje" method="post" theme="simple">
+                                <s:label value="Cupón: "></s:label>
+                                <s:textfield name="cupon" cssClass="form-control"></s:textfield>
+                                <s:hidden name="id" value="%{idViaje}"></s:hidden>
+                                <s:submit name="botonReservar" value="Reservar" cssClass="btn btn-primary btn-block"></s:submit>
+                            </s:form>
+                        </td>
+                    </tr>
+                </s:iterator>
+            </table>    
             <s:include value="footer.jsp"></s:include> 
         </s:if>
         <s:else>

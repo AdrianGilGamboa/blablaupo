@@ -14,7 +14,7 @@
     </package>
     
     <package name="loginPackage" extends="struts-default">
-         <action name="Login">
+        <action name="Login">
             <result>/vistas/GestionUsuario/login.jsp</result>
         </action>
         
@@ -33,24 +33,24 @@
             <result name="success">/vistas/GestionUsuario/login.jsp</result>
         </action>
         <action name="registrarCoche" class="action.usuario.accionCoche" method="crearCoche">
-        <result name="success">/vistas/GestionUsuario/login.jsp</result>
-        <result name="input">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
-        <result name="error">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
+            <result name="success">/vistas/GestionUsuario/login.jsp</result>
+            <result name="input">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
+            <result name="error">/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         </action>
         <action name="verCoche">
-        <result>/vistas/GestionUsuario/crearModificarCoche.jsp</result>
+            <result>/vistas/GestionUsuario/crearModificarCoche.jsp</result>
         </action>
        
     </package>
     
     <package name="anuncioPackage" extends="struts-default">
-         <action name="registrarAnuncio" class="action.anuncio.accionAnuncio" method="crearAnuncio">
+        <action name="registrarAnuncio" class="action.anuncio.accionAnuncio" method="crearAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
         <action name="verAnuncio" class="action.anuncio.verAnuncio" method="verAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
-       <action name="borrarAnuncio" class="action.anuncio.eliminarAnuncio">
+        <action name="borrarAnuncio" class="action.anuncio.eliminarAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
         </action>
         <action name="modificarAnuncio" class="action.anuncio.modificarAnuncio">
@@ -61,8 +61,8 @@
         </action>
     </package>
     
-     <package name="seguroPackage" extends="struts-default">
-         <action name="registrarSeguro" class="action.seguro.crearSeguro" method="crearSeguro">
+    <package name="seguroPackage" extends="struts-default">
+        <action name="registrarSeguro" class="action.seguro.crearSeguro" method="crearSeguro">
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
         </action>
         
@@ -81,7 +81,7 @@
     </package>
 
     <package name="cuponPackage" extends="struts-default">
-         <action name="mostrarCupones" class="action.cupon.accionCupon">
+        <action name="mostrarCupones" class="action.cupon.accionCupon">
             <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
         </action>
         <action name="registrarCupon" class="action.cupon.crearCupon">
@@ -99,21 +99,25 @@
         <action name="editarCupon" class="action.cupon.modificarCupon" method="editar">
             <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
         </action>
+        
+    </package>
+    
+            
+    <package name="viajesPackage" extends="struts-default">
+        <action name="verViajes" class="action.viaje.verViajes">
+            <result name="success">/vistas/inicio.jsp</result>
+        </action>
+        
+        <action name="reservarViaje" class="action.viaje.reservarViaje">
+            <result name="success">/vistas/inicio.jsp</result>
+        </action>
+        <action name="crearViaje" class="action.viaje.crearViaje">
+            <result name="success">/vistas/inicio.jsp</result>
+            <result name="error">/vistas/GestionViaje/crearViaje.jsp</result>
+        </action>
+
     </package>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <package name="usuario" extends="struts-default">
         <action name="modificarUsuario" class="action.usuario.accionModificar">
             <result name="success">/vistas/inicio.jsp</result>
