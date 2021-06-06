@@ -121,7 +121,12 @@
         <action name="borrarViaje" class="action.viaje.eliminarViaje">
             <result name="success">/vistas/GestionViaje/viajesCreados.jsp</result>
         </action>
-        
+        <action name="verMisViajesReservados" class="action.viaje.viajesReservados">
+            <result name="success">/vistas/GestionViaje/viajesReservados.jsp</result>
+        </action>
+        <action name="eliminarReserva" class="action.viaje.eliminarReserva">
+            <result name="success">/vistas/GestionViaje/viajesReservados.jsp</result>
+        </action>
 
     </package>
 
@@ -133,6 +138,15 @@
         </action>
         <action name="eliminarUsuario" class="action.usuario.accionEliminar">
             <result name="success">/vistas/GestionUsuario/login.jsp</result>
+        </action>
+    </package>
+    
+    <package name="valoracion" extends="struts-default">
+        <action name="valorarViaje" class="action.viaje.crearValoracion" method="guardarId">
+            <result>/vistas/GestionViaje/crearValoracion.jsp</result>
+        </action>
+        <action name="enviarValoracion" class="action.viaje.crearValoracion">
+            <result name="success">/vistas/GestionViaje/viajesReservados.jsp</result>
         </action>
     </package>
 </struts>

@@ -50,6 +50,15 @@ public class ValoracionesDAO {
         tx.commit();
     }  
     
+        public Valoraciones readIDReserva(int idReserva){
+        sesion=HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx=sesion.beginTransaction();
+        Query q=sesion.createQuery("From Valoraciones where id_reserva='"+idReserva+"'");
+        Valoraciones lp = (Valoraciones)q.uniqueResult();
+        tx.commit();
+        return lp;
+    }
+    
 
 
 }
