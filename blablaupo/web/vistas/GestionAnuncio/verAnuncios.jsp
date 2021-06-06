@@ -12,56 +12,72 @@
             <title>JSP Page</title>
         </head>
         <body>
-        <s:include value="../header.jsp"></s:include>
-        <s:action name="verAnuncio"></s:action>
+        <s:if test="%{#session.logado=='si'}">
+            <s:include value="../header.jsp"></s:include>
+            <s:action name="verAnuncio"></s:action>
+            <s:if test="%{#session.usuario.tipo=='Admin'}">
+                <s:form action="/vistas/GestionAnuncio/crearAnuncio.jsp" theme="simple">
+                    <s:submit name="crear" value="Crear anuncio!"  cssClass="btn btn-primary btn-block" cssStyle="margin-top: 5%;"></s:submit>
+                </s:form>
+                <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
+                </s:if>
+                <s:else>
+                    <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF" style="margin-top: 10%;">
+                    </s:else>
+                    <tr>  
+                        <th>ID</th>
+                        <th>Coste</th>
+                        <th>Anunciante</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Multimedia</th>
+                        <th><p align= center>Borrar</p></th>
+                        <th><p align= center>Modificar</p></th>
 
-            <h2 class="text-info">Anuncios</h2>
-        <s:form action="/vistas/GestionAnuncio/crearAnuncio.jsp" theme="simple">
-            <s:submit name="crear" value="Crear anuncio!"  cssClass="btn btn-primary btn-block"></s:submit>
-        </s:form>
-        <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">
-            <tr>  
-                <th>ID</th>
-                <th>Coste</th>
-                <th>Anunciante</th>
-                <th>Fecha Inicio</th>
-                <th>Fecha Fin</th>
-                <th>Multimedia</th>
-                <th><p align= center>Borrar</p></th>
-                <th><p align= center>Modificar</p></th>
+                        <s:iterator value="#session.lista" >
 
-            <s:iterator value="#session.lista" >
+                        <tr>
+                            <td><s:property value="idAnuncio" /></td>
+                            <td><s:property value="coste" /> €</td>
+                            <td><s:property value="anunciante" /></td>
+                            <td><s:date name="fechaInicio"  format="dd/MM/yyyy"/></td>
+                            <td><s:date name="fechaFin"  format="dd/MM/yyyy"/></td>
+                            <td><s:property value="multimedia" /></td>
+                            <td>
 
-            <tr>
-                <td><s:property value="idAnuncio" /></td>
-                <td><s:property value="coste" /> €</td>
-                <td><s:property value="anunciante" /></td>
-                <td><s:date name="fechaInicio"  format="dd/MM/yyyy"/></td>
-                <td><s:date name="fechaFin"  format="dd/MM/yyyy"/></td>
-                <td><s:property value="multimedia" /></td>
-                <td>
+                                <s:form action="borrarAnuncio" method="post" theme="simple">
+                                    <s:hidden name="id" value="%{idAnuncio}"></s:hidden>
+                                    <s:submit name="botonBorrar" value="Borrar" cssClass="btn btn-primary btn-block"></s:submit>
+                                </s:form>
+                            </td>
+                            <td>
+                                <s:form action="modificarAnuncio" method="post" theme="simple">
+                                    <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                                    <s:hidden name="coste" value="%{coste}"></s:hidden>
+                                    <s:hidden name="anunciante" value="%{anunciante}"></s:hidden>
+                                    <s:hidden name="fechaInicio" value="%{fechaInicio}"></s:hidden>
+                                    <s:hidden name="fechaFin" value="%{fechaFin}"></s:hidden>
+                                    <s:hidden name="multimedia" value="%{multimedia}"></s:hidden>
+                                    <s:submit name="botonModificar" value="Modificar" cssClass="btn btn-primary btn-block"></s:submit>
+                                </s:form>
+                            </td>
+                        </tr>
+                    </s:iterator>
+                </table>
 
-                    <s:form action="borrarAnuncio" method="post" theme="simple">
-                        <s:hidden name="id" value="%{idAnuncio}"></s:hidden>
-                        <s:submit name="botonBorrar" value="Borrar" cssClass="btn btn-primary btn-block"></s:submit>
-                    </s:form>
-                </td>
-                <td>
-                    <s:form action="modificarAnuncio" method="post" theme="simple">
-                        <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
-                        <s:hidden name="coste" value="%{coste}"></s:hidden>
-                        <s:hidden name="anunciante" value="%{anunciante}"></s:hidden>
-                        <s:hidden name="fechaInicio" value="%{fechaInicio}"></s:hidden>
-                        <s:hidden name="fechaFin" value="%{fechaFin}"></s:hidden>
-                        <s:hidden name="multimedia" value="%{multimedia}"></s:hidden>
-                        <s:submit name="botonModificar" value="Modificar" cssClass="btn btn-primary btn-block"></s:submit>
-                    </s:form>
-                </td>
-            </tr>
-        </s:iterator>
-    </table>
+                <s:include value="../footer.jsp"></s:include> 
+            </s:if>
+            <s:else>
+                <div class="block-heading" style="text-align: center;">
+                    <h1>BlaBlaCrashed</h1>
+                    <h3>¡Debe iniciar sesión para acceder al contenido!</h3>
+                    <br/>
+                    <s:a href="/blablaupo/vistas/GestionUsuario/login.jsp">
+                        Iniciar Sesión
+                    </s:a>
+                </div>
 
-    <s:include value="../footer.jsp"></s:include> 
-</body>
+            </s:else>
+    </body>
 
 </html>

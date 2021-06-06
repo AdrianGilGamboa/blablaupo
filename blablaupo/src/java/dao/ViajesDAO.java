@@ -52,6 +52,15 @@ public class ViajesDAO {
         tx.commit();
     }  
     
+        public List<Viajes> listPorDNIConductor(String dni){
+        sesion=HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx=sesion.beginTransaction();
+        Query q=sesion.createQuery("From Viajes where dni_conductor='"+dni+"'");
+        List<Viajes> lp = (List<Viajes>)q.list();
+        tx.commit();
+        return lp;
+    }
+    
     
 
 }

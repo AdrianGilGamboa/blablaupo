@@ -115,6 +115,13 @@
             <result name="success">/vistas/inicio.jsp</result>
             <result name="error">/vistas/GestionViaje/crearViaje.jsp</result>
         </action>
+        <action name="verMisViajes" class="action.viaje.viajesCreados">
+            <result name="success">/vistas/GestionViaje/viajesCreados.jsp</result>
+        </action>
+        <action name="borrarViaje" class="action.viaje.eliminarViaje">
+            <result name="success">/vistas/GestionViaje/viajesCreados.jsp</result>
+        </action>
+        
 
     </package>
 
