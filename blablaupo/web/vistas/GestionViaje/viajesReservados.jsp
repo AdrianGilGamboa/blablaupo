@@ -41,7 +41,7 @@
                         <td><s:property value="viajes.usuarios.dni" /></td>
                         <td>
                             <s:form action="eliminarReserva" method="post" theme="simple">
-                                <s:hidden name="id" value="%{idViaje}"></s:hidden>
+                                <s:hidden name="id" value="%{idReserva}"></s:hidden>
                                 <s:submit name="eliminarReserva" value="Eliminar" cssClass="btn btn-primary btn-block"></s:submit>
                             </s:form>
                         </td>

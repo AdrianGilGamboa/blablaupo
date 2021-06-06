@@ -111,8 +111,6 @@ public class crearViaje extends ActionSupport {
         v.setNumPasajeros(numPasajeros);
         Usuarios u = (Usuarios) session.getAttribute("usuario");
         v.setUsuarios(u);
-        System.out.println("HORA VIAJEEEEEEEEEEEEEEEEEEEE1111"+getFechaLlegada());
-        System.out.println("HORA VIAJEEEEEEEEEEEEEEEEEEEE22222"+v.getHoraLlegada());
         SegurosDAO daoSeguros = new SegurosDAO();
         if (daoSeguros.readTipo(seguro) != null) {
             v.setSeguros(daoSeguros.readTipo(seguro));

@@ -83,6 +83,7 @@ public class eliminarReserva extends ActionSupport {
     }
     
     public String execute() throws Exception {
+        /*
        listaReservas = daoReservas.list();
        Usuarios usu = (Usuarios) session.getAttribute("usuario");
         System.out.println(id);
@@ -92,6 +93,8 @@ public class eliminarReserva extends ActionSupport {
                 daoReservas.delete(r);
             }
         }
+        return SUCCESS;*/
+        daoReservas.delete(daoReservas.read(getId()));
         return SUCCESS;
     }
     
