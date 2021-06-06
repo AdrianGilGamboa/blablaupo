@@ -44,12 +44,17 @@
                             <td><s:property value="usuario.dni" /></td>
                             <td><s:property value="seguros.idSeguro" /></td>
                             <td>
+                                <s:if test="%{#session.usuario.dni!=usuarios.dni}">
                                 <s:form action="reservarViaje" method="post" theme="simple">
                                     <s:label value="Cupón: "></s:label>
                                     <s:textfield name="cupon" cssClass="form-control"></s:textfield>
                                     <s:hidden name="id" value="%{idViaje}"></s:hidden>
                                     <s:submit name="botonReservar" value="Reservar" cssClass="btn btn-primary btn-block"></s:submit>
                                 </s:form>
+                                </s:if>
+                                <s:else>
+                                    <p align= center>---</p>
+                                </s:else>
                             </td>
                         </tr>
                     </s:iterator>

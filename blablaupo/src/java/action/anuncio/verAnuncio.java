@@ -14,12 +14,9 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-/**
- *
- * @author manum
- */
+
 public class verAnuncio extends ActionSupport {
-    private List<Anuncios> lista = new ArrayList();
+    List<Anuncios> lista = new ArrayList();
      private HttpSession session = ServletActionContext.getRequest().getSession(false);
     private AnunciosDAO anuncioDAO = new AnunciosDAO();
 
@@ -53,6 +50,7 @@ public class verAnuncio extends ActionSupport {
     public String verAnuncio(){
                 Anuncios anuncio = new Anuncios();
         lista = anuncioDAO.list();
+        setLista(lista);
         session.setAttribute("lista", lista);
         return SUCCESS;
     }
