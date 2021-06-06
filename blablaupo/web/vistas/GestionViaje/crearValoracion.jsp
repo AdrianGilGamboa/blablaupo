@@ -15,6 +15,7 @@
                     <h2 class="text-info">Valoración del Viaje</h2>
                 </div>
                 <s:form name="valorarViaje" action="enviarValoracion" >
+                    <s:hidden name="id" />
                     <s:label value="Puntuación (1 -> Muy Malo ... 10 -> Muy Bueno)"></s:label>
                     <s:textfield name="puntuacion" cssClass="form-control"></s:textfield>
                     <s:label value="Descripción"></s:label>

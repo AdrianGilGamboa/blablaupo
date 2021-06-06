@@ -78,11 +78,12 @@ public class reservarViaje extends ActionSupport {
         res.setFReserva(via.getHoraSalida());
         Usuarios usu = (Usuarios) session.getAttribute("usuario");
         res.setUsuarios(usu);
-        res.setViajes(via);
+        res.setViajes(via);/*
         System.out.println(daoReservas.readUnique(id, usu.getDni()));
         if(daoReservas.readUnique(id, usu.getDni())==null){
+        
+        }*/
         daoReservas.create(res);
-        }
         return SUCCESS;
     }
 

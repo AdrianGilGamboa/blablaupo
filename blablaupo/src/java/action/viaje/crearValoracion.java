@@ -86,12 +86,15 @@ public class crearValoracion extends ActionSupport {
     public crearValoracion() {
     }
     
+   
     public String guardarId(){
-        session.setAttribute("idV", id);
+      /*   session.setAttribute("idV", id);*/
         return SUCCESS;
     }
+    
 
     public String execute() throws Exception {
+        /*
         System.out.println("El id del viaje es: " + id);
         System.out.println("El id del viaje es: " + session.getAttribute("idV"));
         Valoraciones val = new Valoraciones();
@@ -100,6 +103,16 @@ public class crearValoracion extends ActionSupport {
         Usuarios usu = (Usuarios) session.getAttribute("usuario");
         Reservas res = daoReservas.readUnique((Integer) session.getAttribute("idV"), usu.getDni());
         val.setReservas(res);
+        daoValoraciones.create(val);
+        return SUCCESS;
+        */
+        Valoraciones val = new Valoraciones();
+        val.setDescripcion(descripcion);
+        val.setPuntuacion(puntuacion);
+        Reservas res = daoReservas.read(getId());
+        System.out.println("RESERVAAAAAAAAAAAA "+getId());
+        val.setReservas(res);
+        System.out.println("PETA????????????????'");
         daoValoraciones.create(val);
         return SUCCESS;
     }
