@@ -27,7 +27,7 @@
                     <s:textfield name="fechaLlegada" cssClass="form-control" ></s:textfield>
                     <s:label value="Coste"></s:label>
                     <s:textfield name="coste" cssClass="form-control" ></s:textfield>
-                    <s:label value="Seguro"></s:label>
+                    <s:label value="Tipo Seguro"></s:label>
                     <s:textfield name="seguro" cssClass="form-control" ></s:textfield>
                     <s:label value="Numero de Pasajeros"></s:label>
                     <s:textfield name="numPasajeros" cssClass="form-control" ></s:textfield>

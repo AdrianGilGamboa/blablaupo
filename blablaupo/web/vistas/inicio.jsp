@@ -29,8 +29,8 @@
                         <th>Coste</th>
                         <th>Fecha-Hora Salida</th>
                         <th>Fecha-Hora Llegada</th>
-                        <th>Seguro</th>
-                        <th>Dni Conductor</th>
+                        <th>ID Seguro</th>
+                        <th>DNI Conductor</th>
                         <th><p align= center>Reservar Viaje</p></th>
                     </tr>
 
