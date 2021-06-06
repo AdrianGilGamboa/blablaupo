@@ -50,7 +50,7 @@ public class verAnuncio extends ActionSupport {
     public String verAnuncio(){
                 Anuncios anuncio = new Anuncios();
         lista = anuncioDAO.list();
-        setLista(lista);
+        //setLista(lista);
         session.setAttribute("lista", lista);
         return SUCCESS;
     }
