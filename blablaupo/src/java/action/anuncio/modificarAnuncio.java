@@ -140,6 +140,24 @@ public class modificarAnuncio extends ActionSupport {
             
             return SUCCESS;
     }
+    
+         public void validate() { 
+        if (this.getCoste() == 0){
+            addFieldError("coste", getText("anuncio.coste"));
+        }
+        if (this.getAnunciante().equals("")){
+            addFieldError("anunciante", getText("anuncio.anunciante"));
+        }
+        if (this.getFechaInicio() == null){
+            addFieldError("fechaInicio", getText("anuncio.fechaInicio"));
+        }if (this.getFechaFin() == null){
+            addFieldError("fechaFin", getText("anuncio.fechaFin"));
+        }
+        if (this.getMultimedia().equals("")){
+            addFieldError("multimedia", getText("anuncio.multimedia"));
+        }
+    }
+    
     public String execute() throws Exception {
         return SUCCESS;    }
     

@@ -46,6 +46,8 @@
     <package name="anuncioPackage" extends="struts-default">
         <action name="registrarAnuncio" class="action.anuncio.accionAnuncio" method="crearAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
+            <result name="input">/vistas/GestionAnuncio/crearAnuncio.jsp</result>
+            <result name="error">/vistas/GestionAnuncio/crearAnuncio.jsp</result>
         </action>
         <action name="verAnuncio" class="action.anuncio.verAnuncio" method="verAnuncio">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
@@ -58,6 +60,8 @@
         </action>
         <action name="editarAnuncio" class="action.anuncio.modificarAnuncio" method="editar">
             <result name="success">/vistas/GestionAnuncio/verAnuncios.jsp</result>
+            <result name="input">/vistas/GestionAnuncio/modificarAnuncio.jsp</result>
+            <result name="error">/vistas/GestionAnuncio/modificarAnuncio.jsp</result>
         </action>
     </package>
     
