@@ -29,16 +29,16 @@
 
                     </tr>
 
-                <s:iterator value="%{listaMisViajesReservados}">
+                <s:iterator value="%{listaReservas}">
 
                     <tr>
-                        <td><s:property value="origen" /></td>
-                        <td><s:property value="destino" /></td>
-                        <td><s:property value="coste" /> €</td>
-                        <td><s:date name="horaSalida"  format="dd/MM/yyyy - HH:mm"/></td>
-                        <td><s:date name="horaLlegada"  format="dd/MM/yyyy - HH:mm"/></td>
-                        <td><s:property value="seguros.idSeguro" /></td>
-                        <td><s:property value="usuario.dni" /></td>
+                        <td><s:property value="viajes.origen" /></td>
+                        <td><s:property value="viajes.destino" /></td>
+                        <td><s:property value="costeFinal" /> €</td>
+                        <td><s:date name="viajes.horaSalida"  format="dd/MM/yyyy - HH:mm"/></td>
+                        <td><s:date name="viajes.horaLlegada"  format="dd/MM/yyyy - HH:mm"/></td>
+                        <td><s:property value="viajes.seguros.idSeguro" /></td>
+                        <td><s:property value="viajes.usuarios.dni" /></td>
                         <td>
                             <s:form action="eliminarReserva" method="post" theme="simple">
                                 <s:hidden name="id" value="%{idViaje}"></s:hidden>

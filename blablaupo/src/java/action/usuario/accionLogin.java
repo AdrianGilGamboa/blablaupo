@@ -86,9 +86,7 @@ public class accionLogin extends ActionSupport {
                session.setAttribute("coche", c);
                //}
                return SUCCESS;
-           }
-
-   
+           }   
 
     }   
   

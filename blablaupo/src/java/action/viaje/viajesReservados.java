@@ -72,6 +72,7 @@ public class viajesReservados extends ActionSupport {
     public String execute() throws Exception {
         Usuarios usu = (Usuarios) session.getAttribute("usuario");
         listaReservas = daoReservas.listDNIPasajero(usu.getDni());
+        /*
         ValoracionesDAO daoValoraciones = new ValoracionesDAO();
         for (Reservas r : listaReservas) {
                 Viajes v = daoViajes.read(r.getViajes().getIdViaje());
@@ -79,7 +80,8 @@ public class viajesReservados extends ActionSupport {
                 listaMisViajesReservados.add(v);
                 }
         }
-        setListaMisViajesReservados(listaMisViajesReservados);
+        setListaMisViajesReservados(listaMisViajesReservados);*/
+        setListaReservas(listaReservas);
         return SUCCESS;
     }
 

@@ -1,6 +1,7 @@
 package dao;
 
 import entidades.Reservas;
+import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -84,6 +85,11 @@ public class ReservasDAO {
         Transaction tx = sesion.beginTransaction();
         Query q = sesion.createQuery("From Reservas where dni_pasajero='"+dni+"'");
         List<Reservas> listaReservas = (List<Reservas>) q.list();
+        Iterator it = listaReservas.iterator();
+        while(it.hasNext()){
+            Reservas r=(Reservas) it.next();
+            System.out.println(r.getViajes().getOrigen());
+        }
         tx.commit();
         return listaReservas;
     }
