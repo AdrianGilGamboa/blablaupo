@@ -9,6 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
         <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
+        <s:head/>
         </head>
         <body>
             <div class="container">

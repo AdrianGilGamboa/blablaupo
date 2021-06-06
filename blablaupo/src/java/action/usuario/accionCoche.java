@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package action.usuario;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -13,10 +9,7 @@ import entidades.Usuarios;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-/**
- *
- * @author manum
- */
+
 public class accionCoche extends ActionSupport {
 
     private String matricula;
@@ -124,19 +117,19 @@ public class accionCoche extends ActionSupport {
 
     public void validate() {
         if (this.getMatricula().equals("")) {
-            addFieldError("matricula", "Matricula is required.");
+            addFieldError("matricula", getText("coche.matricula"));
         }
 
         if (this.getMarca().equals("")) {
-            addFieldError("color", "Color is required.");
+            addFieldError("color", getText("coche.color"));
         }
 
         if (this.getColor().equals("")) {
-            addFieldError("marca", "Marca is required.");
+            addFieldError("marca", getText("coche.marca"));
         }
 
         if (this.getModelo().equals("")) {
-            addFieldError("modelo", "Modelo is required.");
+            addFieldError("modelo", getText("coche.modelo"));
         }
     }
 

@@ -7,6 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Crear Anuncio</title>
         <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
+        <s:head/>
         </head>
         <body>
         <s:if test="%{#session.logado=='si'}">
