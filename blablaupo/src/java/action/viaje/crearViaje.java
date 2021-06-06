@@ -120,5 +120,33 @@ public class crearViaje extends ActionSupport {
         }
         return SUCCESS;
     }
+    
+    
+    public void validate() {
+        if (this.getOrigen().equals("")) {
+            addFieldError("origen", getText("viaje.origen"));
+        }
+        if (this.getDestino().equals("")) {
+            addFieldError("destino", getText("viaje.destino"));
+        }
+        if (this.getFechaSalida()== null){
+            addFieldError("fechaSalida", getText("viaje.fechaSalida"));
+        }
+        if (this.getFechaLlegada()== null){
+            addFieldError("fechaLlegada", getText("viaje.fechaLlegada"));
+        }
+        if (this.getCoste() == null){
+            addFieldError("coste", getText("viaje.coste"));
+        }
+        SegurosDAO daoSeguros = new SegurosDAO();
+        if(getSeguro().equals("")){
+            addFieldError("seguro", getText("viaje.seguro"));
+        }else if (daoSeguros.readTipo(getSeguro()) == null) {
+            addFieldError("seguro", getText("viaje.seguro"));
+        }
+        if (getNumPasajeros() == 0) {
+            addFieldError("numPasajeros", getText("viaje.numPasajeros"));
+        }
+    }
 
 }
