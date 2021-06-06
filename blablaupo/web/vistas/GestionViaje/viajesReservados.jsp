@@ -23,7 +23,7 @@
                         <th>Fecha-Hora Salida</th>
                         <th>Fecha-Hora Llegada</th>
                         <th>Seguro</th>
-                        <th>Teléfono Conductor</th>
+                        <th>Dni Conductor</th>
                         <th><p align= center>Eliminar Reserva</p></th>
                         <th><p align= center>Valorar Viaje</p></th>
 
@@ -37,8 +37,8 @@
                         <td><s:property value="coste" /> €</td>
                         <td><s:date name="horaSalida"  format="dd/MM/yyyy - HH:mm"/></td>
                         <td><s:date name="horaLlegada"  format="dd/MM/yyyy - HH:mm"/></td>
-                        <td><s:property value="usuario.dni" /></td>
                         <td><s:property value="seguros.idSeguro" /></td>
+                        <td><s:property value="usuario.dni" /></td>
                         <td>
                             <s:form action="eliminarReserva" method="post" theme="simple">
                                 <s:hidden name="id" value="%{idViaje}"></s:hidden>
