@@ -7,6 +7,7 @@ package action.viaje;
 
 import com.opensymphony.xwork2.ActionSupport;
 import dao.ReservasDAO;
+import dao.ValoracionesDAO;
 import dao.ViajesDAO;
 import entidades.Reservas;
 import entidades.Usuarios;
@@ -95,6 +96,16 @@ public class eliminarReserva extends ActionSupport {
         }
         return SUCCESS;*/
         daoReservas.delete(daoReservas.read(getId()));
+                        Usuarios usu = (Usuarios) session.getAttribute("usuario");
+        listaReservas = daoReservas.listDNIPasajero(usu.getDni());
+        List<Reservas> sinvalorar = new ArrayList<>();        
+        ValoracionesDAO daoValoraciones = new ValoracionesDAO();
+        for(Reservas r: listaReservas){
+            if(daoValoraciones.readIDReserva(r.getIdReserva()) == null){
+                sinvalorar.add(r);
+            }
+        }
+        setListaReservas(sinvalorar);
         return SUCCESS;
     }
     
