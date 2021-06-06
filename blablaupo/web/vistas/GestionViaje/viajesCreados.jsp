@@ -12,7 +12,6 @@
         <body>
         <s:if test="%{#session.logado=='si'}">
             <s:include value="../header.jsp"></s:include>
-            <s:action name="verMisViajes"></s:action>
             <s:if test="%{#session.coche!=null || #session.usuario.tipo=='Admin'}">
                 <s:form action="/vistas/GestionViaje/crearViaje.jsp" theme="simple" cssStyle="margin-top: 5%;">
                     <s:submit name="crear" value="Crear Viaje!"  cssClass="btn btn-primary btn-block"></s:submit>
@@ -33,7 +32,9 @@
                         <th>Teléfono Conductor</th>
                         <th><p align= center>Borrar</p></th>
 
-                        <s:iterator value="%{listaMisViajes}">
+                    </tr>
+
+                    <s:iterator value="%{listaMisViajes}">
 
                         <tr>
                             <td><s:property value="origen" /></td>

@@ -41,7 +41,7 @@
                             <td><s:property value="coste" /> €</td>
                             <td><s:date name="horaSalida"  format="dd/MM/yyyy - HH:mm"/></td>
                             <td><s:date name="horaLlegada"  format="dd/MM/yyyy - HH:mm"/></td>
-                            <td><s:property value="usuario.dni" /></td>
+                            <td><s:property value="usuarios.dni" /></td>
                             <td><s:property value="seguros.idSeguro" /></td>
                             <td>
                                 <s:if test="%{#session.usuario.dni!=usuarios.dni}">

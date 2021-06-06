@@ -26,11 +26,11 @@ public class ReservasDAO {
         tx.commit();
         return a;
     }
-    
-        public Reservas readUnique(Integer id_viaje, String dni_Pasajero) {
+
+    public Reservas readUnique(Integer id_viaje, String dni_Pasajero) {
         sesion = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("from Reservas where id_viaje='" + id_viaje + "' and dni_pasajero='"+dni_Pasajero+"'");
+        Query q = sesion.createQuery("from Reservas where id_viaje='" + id_viaje + "' and dni_pasajero='" + dni_Pasajero + "'");
         Reservas a = (Reservas) q.uniqueResult();
         tx.commit();
         return a;
@@ -62,18 +62,27 @@ public class ReservasDAO {
     public long contarReservasPorViaje(Reservas reserva) {
         sesion = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("select count(*) from Reservas where id_viaje='"+reserva.getViajes().getIdViaje()+"'");
-        Long count = (Long)q.uniqueResult();
+        Query q = sesion.createQuery("select count(*) from Reservas where id_viaje='" + reserva.getViajes().getIdViaje() + "'");
+        Long count = (Long) q.uniqueResult();
         System.out.println(q);
-        System.out.println("Long:"+count);
+        System.out.println("Long:" + count);
         tx.commit();
         return count;
     }
-    
-        public List<Reservas> distinctReservasIdViaje() {
+
+    public List<Reservas> distinctReservasIdViaje() {
         sesion = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = sesion.beginTransaction();
         Query q = sesion.createQuery("From Reservas group by id_viaje");
+        List<Reservas> listaReservas = (List<Reservas>) q.list();
+        tx.commit();
+        return listaReservas;
+    }
+
+    public List<Reservas> listDNIPasajero(String dni) {
+        sesion = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("From Reservas where dni_pasajero='"+dni+"'");
         List<Reservas> listaReservas = (List<Reservas>) q.list();
         tx.commit();
         return listaReservas;
