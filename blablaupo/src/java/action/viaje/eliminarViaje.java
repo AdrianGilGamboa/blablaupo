@@ -87,8 +87,9 @@ public class eliminarViaje extends ActionSupport {
 
     public String execute() throws Exception {
         listaReservas = daoReservas.list();
+        System.out.println(id);
         for (Reservas r : listaReservas) {
-            if (r.getIdReserva().equals(id)) {
+            if (r.getViajes().getIdViaje().equals(id)) {
                 daoReservas.delete(r);
             }
         }
