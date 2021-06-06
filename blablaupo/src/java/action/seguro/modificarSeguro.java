@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package action.seguro;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -11,18 +7,14 @@ import entidades.Seguros;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-/**
- *
- * @author manum
- */
 public class modificarSeguro extends ActionSupport {
-     
-     int idSeguro;
-     private String empresa;
-     private String tipo;
-     private String descripcion;
-     private SegurosDAO sDao = new SegurosDAO();
-   HttpSession session = ServletActionContext.getRequest().getSession(false);
+
+    int idSeguro;
+    private String empresa;
+    private String tipo;
+    private String descripcion;
+    private SegurosDAO sDao = new SegurosDAO();
+    HttpSession session = ServletActionContext.getRequest().getSession(false);
 
     public int getIdSeguro() {
         return idSeguro;
@@ -31,8 +23,6 @@ public class modificarSeguro extends ActionSupport {
     public void setIdSeguro(int idSeguro) {
         this.idSeguro = idSeguro;
     }
-
-    
 
     public HttpSession getSession() {
         return session;
@@ -66,8 +56,6 @@ public class modificarSeguro extends ActionSupport {
         this.descripcion = descripcion;
     }
 
-    
-
     public SegurosDAO getsDao() {
         return sDao;
     }
@@ -75,24 +63,37 @@ public class modificarSeguro extends ActionSupport {
     public void setsDao(SegurosDAO sDao) {
         this.sDao = sDao;
     }
-    
-     
+
     public modificarSeguro() {
     }
-    public String editar(){
+
+    public String editar() {
         SegurosDAO daoSeguro = new SegurosDAO();
-        Seguros s = daoSeguro.read(getIdSeguro());            
-            s.setEmpresa(getEmpresa());
-            s.setTipo(getTipo());
-            s.setDescripcion(getDescripcion());
-            daoSeguro.update(s);  
-            
-            return SUCCESS;
-        
+        Seguros s = daoSeguro.read(getIdSeguro());
+        s.setEmpresa(getEmpresa());
+        s.setTipo(getTipo());
+        s.setDescripcion(getDescripcion());
+        daoSeguro.update(s);
+
+        return SUCCESS;
+
     }
+
     public String execute() throws Exception {
-       
+
         return SUCCESS;
     }
-    
+
+    public void validate() {
+        if (this.getEmpresa().equals("")) {
+            addFieldError("empresa", getText("seguro.empresa"));
+        }
+        if (this.getTipo().equals("")) {
+            addFieldError("tipo", getText("seguro.tipo"));
+        }
+        if (this.getDescripcion().equals("")) {
+            addFieldError("descripcion", getText("seguro.descripcion"));
+        }
+    }
+
 }

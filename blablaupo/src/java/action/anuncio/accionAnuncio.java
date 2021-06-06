@@ -137,6 +137,8 @@ public class accionAnuncio extends ActionSupport {
         anuncioDAO.create(anuncio);
         return SUCCESS;
     }
+    
+    /*
     public String verAnuncio(){
                 Anuncios anuncio = new Anuncios();
         coste = getCoste();
@@ -161,6 +163,7 @@ public class accionAnuncio extends ActionSupport {
         anuncioDAO.update(anuncio);
         return SUCCESS;
     }
+    */
     
      public void validate() { 
         if (this.getCoste() == 0){

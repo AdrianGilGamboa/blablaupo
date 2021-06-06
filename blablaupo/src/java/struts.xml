@@ -68,10 +68,12 @@
     <package name="seguroPackage" extends="struts-default">
         <action name="registrarSeguro" class="action.seguro.crearSeguro" method="crearSeguro">
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
+            <result name="input">/vistas/GestionSeguro/crearSeguro.jsp</result>
+            <result name="error">/vistas/GestionSeguro/crearSeguro.jsp</result>
         </action>
         
         <action name="verSeguros" class="action.seguro.verSeguro" method="verSeguros">
-            <result name="success">/vista/GestionSeguro/verSeguros.jsp</result>
+            <result name="success">/vista/GestionSeguro/verSeguros.jsp</result>            
         </action>
         <action name="borrarSeguro" class="action.seguro.eliminarSeguro">
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
@@ -81,6 +83,8 @@
         </action>
         <action name="editarSeguro" class="action.seguro.modificarSeguro" method="editar">
             <result name="success">/vistas/GestionSeguro/verSeguros.jsp</result>
+            <result name="input">/vistas/GestionSeguro/modificarSeguro.jsp</result>
+            <result name="error">/vistas/GestionSeguro/modificarSeguro.jsp</result>
         </action>
     </package>
 
@@ -90,6 +94,8 @@
         </action>
         <action name="registrarCupon" class="action.cupon.crearCupon">
             <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
+            <result name="input">/vistas/GestionCupon/crearCupon.jsp</result>
+            <result name="error">/vistas/GestionCupon/crearCupon.jsp</result>
         </action>
         <action name="creaCodigo" class="action.cupon.creaCodigo">
             <result name="success">/vistas/GestionCupon/crearCupon.jsp</result>
@@ -102,6 +108,8 @@
         </action>
         <action name="editarCupon" class="action.cupon.modificarCupon" method="editar">
             <result name="success">/vistas/GestionCupon/verCupones.jsp</result>
+            <result name="input">/vistas/GestionCupon/modificarCupon.jsp</result>
+            <result name="error">/vistas/GestionCupon/modificarCupon.jsp</result>
         </action>
         
     </package>

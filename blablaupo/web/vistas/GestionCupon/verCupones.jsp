@@ -18,7 +18,7 @@
             <s:include value="../header.jsp"></s:include>
             <s:action name="mostrarCupones"></s:action>
             <s:if test="%{#session.usuario.tipo=='Admin'}">
-                <s:form action="/blablaupo/vistas/GestionCupon/crearCupon.jsp" theme="simple">
+                <s:form action="/vistas/GestionCupon/crearCupon.jsp" theme="simple">
                     <s:submit name="crear" value="Crear Cupón!" cssClass="btn btn-primary btn-block" cssStyle="margin-top: 5%;"></s:submit>
                 </s:form>
             <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF">

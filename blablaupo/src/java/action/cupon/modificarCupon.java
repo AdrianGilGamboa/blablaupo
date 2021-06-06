@@ -80,5 +80,20 @@ public class modificarCupon extends ActionSupport {
     public String execute() throws Exception {
         return SUCCESS;
     }
+    
+        public void validate() {
+        if (this.getNumeroCupon().equals("")) {
+            addFieldError("numeroCupon", getText("cupon.codigo"));
+        }
+        if (this.getDescCupon()== 0) {
+            addFieldError("descCupon", getText("cupon.descuento"));
+        }
+        if (this.getFechaInicio() == null) {
+            addFieldError("fechaInicio", getText("anuncio.fechaInicio"));
+        }
+        if (this.getFechaFin() == null) {
+            addFieldError("fechaFin", getText("anuncio.fechaFin"));
+        }
+    }
 
 }

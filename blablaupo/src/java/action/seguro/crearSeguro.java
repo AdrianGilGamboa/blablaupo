@@ -8,15 +8,14 @@ import java.util.Set;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
-
-
 public class crearSeguro extends ActionSupport {
-     private Integer idSeguro;
-     private String empresa;
-     private String tipo;
-     private String descripcion;
-     private SegurosDAO sDao = new SegurosDAO();
-         HttpSession session = ServletActionContext.getRequest().getSession(false);
+
+    private Integer idSeguro;
+    private String empresa;
+    private String tipo;
+    private String descripcion;
+    private SegurosDAO sDao = new SegurosDAO();
+    HttpSession session = ServletActionContext.getRequest().getSession(false);
 
     public HttpSession getSession() {
         return session;
@@ -33,8 +32,7 @@ public class crearSeguro extends ActionSupport {
     public void setsDao(SegurosDAO sDao) {
         this.sDao = sDao;
     }
-     
-     
+
     public Integer getIdSeguro() {
         return idSeguro;
     }
@@ -67,12 +65,11 @@ public class crearSeguro extends ActionSupport {
         this.descripcion = descripcion;
     }
 
-
     public crearSeguro() {
     }
-    
-    public String crearSeguro(){
-        
+
+    public String crearSeguro() {
+
         Seguros seguro = new Seguros();
         seguro.setTipo(getTipo());
         seguro.setDescripcion(getDescripcion());
@@ -81,9 +78,21 @@ public class crearSeguro extends ActionSupport {
         session.setAttribute("idS", getIdSeguro());
         return SUCCESS;
     }
-     
+
     public String execute() throws Exception {
         return SUCCESS;
     }
-    
+
+    public void validate() {
+        if (this.getEmpresa().equals("")) {
+            addFieldError("empresa", getText("seguro.empresa"));
+        }
+        if (this.getTipo().equals("")) {
+            addFieldError("tipo", getText("seguro.tipo"));
+        }
+        if (this.getDescripcion().equals("")) {
+            addFieldError("descripcion", getText("seguro.descripcion"));
+        }
+    }
+
 }

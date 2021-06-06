@@ -7,6 +7,7 @@
         <s:head/>
         <title>Registro</title>
         <link href="<s:url value='/design/design.css'></s:url>" rel="stylesheet" type="text/css"/>
+        <s:head/>
         </head>
         <body>
         <s:if test="%{#session.logado=='si'}">
