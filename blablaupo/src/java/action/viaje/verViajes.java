@@ -6,8 +6,10 @@
 package action.viaje;
 
 import com.opensymphony.xwork2.ActionSupport;
+import dao.AnunciosDAO;
 import dao.ReservasDAO;
 import dao.ViajesDAO;
+import entidades.Anuncios;
 import entidades.Reservas;
 import entidades.Usuarios;
 import entidades.Viajes;
@@ -23,12 +25,55 @@ import org.apache.struts2.ServletActionContext;
 public class verViajes extends ActionSupport {
 
     ArrayList<Viajes> listaViajes = new ArrayList<>();
+    List<Anuncios> listaAnuncios = new ArrayList<Anuncios>();
     List<Reservas> listaReservas2 = new ArrayList<Reservas>();
     List<Reservas> listaReservas = new ArrayList<Reservas>();
     private HttpSession session = ServletActionContext.getRequest().getSession(false);
     private ViajesDAO daoViajes = new ViajesDAO();
     private ReservasDAO daoReservas = new ReservasDAO();
     private int cont = 0;
+
+    public List<Anuncios> getListaAnuncios() {
+        return listaAnuncios;
+    }
+
+    public void setListaAnuncios(List<Anuncios> listaAnuncios) {
+        this.listaAnuncios = listaAnuncios;
+    }
+
+    public List<Reservas> getListaReservas2() {
+        return listaReservas2;
+    }
+
+    public void setListaReservas2(List<Reservas> listaReservas2) {
+        this.listaReservas2 = listaReservas2;
+    }
+
+    public List<Reservas> getListaReservas() {
+        return listaReservas;
+    }
+
+    public void setListaReservas(List<Reservas> listaReservas) {
+        this.listaReservas = listaReservas;
+    }
+
+    public ReservasDAO getDaoReservas() {
+        return daoReservas;
+    }
+
+    public void setDaoReservas(ReservasDAO daoReservas) {
+        this.daoReservas = daoReservas;
+    }
+
+    public int getCont() {
+        return cont;
+    }
+
+    public void setCont(int cont) {
+        this.cont = cont;
+    }
+    
+    
 
     public HttpSession getSession() {
         return session;
@@ -94,6 +139,11 @@ public class verViajes extends ActionSupport {
 
         }
         System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        
+        AnunciosDAO daoAnuncios = new AnunciosDAO();
+        listaAnuncios = daoAnuncios.list();
+        session.setAttribute("anuncios", listaAnuncios);
+        
        /* listaViajes = (ArrayList<Viajes>) daoViajes.list();
         listaReservas2.clear();
         listaReservas = daoReservas.distinctReservasIdViaje();

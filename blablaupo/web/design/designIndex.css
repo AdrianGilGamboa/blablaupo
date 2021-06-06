@@ -276,41 +276,7 @@ ul.actions.fit.small li {
     padding: 0 0 0 0.5em;
 }
 
-/*@media screen and (max-width: 480px) {
 
-    ul.actions {
-        margin: 0 0 2em 0;
-    }
-
-    ul.actions li {
-        padding: 1em 0 0 0;
-        display: block;
-        text-align: center;
-        width: 100%;
-    }
-
-    ul.actions li:first-child {
-        padding-top: 0;
-    }
-
-    ul.actions li > * {
-        width: 100%;
-        margin: 0 !important;
-    }
-
-    ul.actions li > *.icon:before {
-        margin-left: -2em;
-    }
-
-    ul.actions.small li {
-        padding: 0.5em 0 0 0;
-    }
-
-    ul.actions.small li:first-child {
-        padding-top: 0;
-    }
-
-}*/
 
 
 /* Icon */
@@ -352,26 +318,7 @@ ul.actions.fit.small li {
 
 
 
-/*inscripcion a competición*/
-#inscripciones{
-    position: absolute;
-    background-color: white;
-    opacity: 80%;
-    margin:15%;
-    font-family: Montserrat,sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    padding:5%;
-    margin-top: 10%;
-    /*    margin-bottom: 20%;*/
-    text-align: center;
-    position:fixed;
-    height: 30%;
-    width: 60%;
-}
+
 @media (min-width:768px) {
     .inscripciones {
         padding: 40px;

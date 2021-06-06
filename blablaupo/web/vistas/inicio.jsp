@@ -32,6 +32,7 @@
                         <th>Seguro</th>
                         <th>Teléfono Conductor</th>
                         <th><p align= center>Reservar Viaje</p></th>
+                    </tr>
 
                         <s:iterator value="#session.viajes">
 
@@ -45,20 +46,31 @@
                             <td><s:property value="seguros.idSeguro" /></td>
                             <td>
                                 <s:if test="%{#session.usuario.dni!=usuarios.dni}">
-                                <s:form action="reservarViaje" method="post" theme="simple">
-                                    <s:label value="Cupón: "></s:label>
-                                    <s:textfield name="cupon" cssClass="form-control"></s:textfield>
-                                    <s:hidden name="id" value="%{idViaje}"></s:hidden>
-                                    <s:submit name="botonReservar" value="Reservar" cssClass="btn btn-primary btn-block"></s:submit>
-                                </s:form>
+                                    <s:form action="reservarViaje" method="post" theme="simple">
+                                        <s:label value="Cupón: "></s:label>
+                                        <s:textfield name="cupon" cssClass="form-control"></s:textfield>
+                                        <s:hidden name="id" value="%{idViaje}"></s:hidden>
+                                        <s:submit name="botonReservar" value="Reservar" cssClass="btn btn-primary btn-block"></s:submit>
+                                    </s:form>
                                 </s:if>
                                 <s:else>
-                                    <p align= center>---</p>
+                                    <p align= "center">---</p>
                                 </s:else>
                             </td>
                         </tr>
                     </s:iterator>
-                </table>    
+                </table>
+
+
+                <table  border=1 cellspacing=1 cellpadding=2 width="100%"  bgcolor="#FFFFFF" style="margin-top: 10%;">
+
+                        <s:iterator value="#session.anuncios">
+
+                        <tr>
+                            <td style="text-align: center;font-size: 400%;border-color: white;"><s:property value="multimedia" /></td>
+                        </tr>
+                    </s:iterator>
+                </table> 
                 <s:include value="footer.jsp"></s:include> 
             </s:if>
             <s:else>
