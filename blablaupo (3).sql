@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-04-2021 a las 19:05:32
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.11
+-- Tiempo de generación: 06-06-2021 a las 23:30:22
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,10 +33,17 @@ CREATE TABLE `anuncios` (
   `ID_ANUNCIO` int(11) NOT NULL,
   `COSTE` float NOT NULL,
   `ANUNCIANTE` varchar(255) NOT NULL,
-  `FECHA_INICIO` datetime NOT NULL,
-  `FECHA_FIN` datetime NOT NULL,
+  `FECHA_INICIO` date NOT NULL,
+  `FECHA_FIN` date NOT NULL,
   `MULTIMEDIA` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `anuncios`
+--
+
+INSERT INTO `anuncios` (`ID_ANUNCIO`, `COSTE`, `ANUNCIANTE`, `FECHA_INICIO`, `FECHA_FIN`, `MULTIMEDIA`) VALUES
+(5, 50, 'Pilot', '2020-05-10', '2020-07-10', 'Pilot - Bolígrafos!');
 
 -- --------------------------------------------------------
 
@@ -52,6 +59,14 @@ CREATE TABLE `coche` (
   `DNI_CONDUCTOR` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `coche`
+--
+
+INSERT INTO `coche` (`MATRICULA`, `COLOR`, `MODELO`, `MARCA`, `DNI_CONDUCTOR`) VALUES
+('2874GMB', 'Negro', 'RS7', 'Audi', '12345678Z'),
+('3897GCD', 'Gris Clarito', '308', 'Peugeot', '28983187J');
+
 -- --------------------------------------------------------
 
 --
@@ -61,9 +76,16 @@ CREATE TABLE `coche` (
 CREATE TABLE `cupones` (
   `NUMERO_CUPON` varchar(255) NOT NULL,
   `DESC_CUPON` varchar(255) NOT NULL,
-  `FECHA_FIN` datetime NOT NULL,
-  `FECHA_INICIO` datetime NOT NULL
+  `FECHA_FIN` date NOT NULL,
+  `FECHA_INICIO` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cupones`
+--
+
+INSERT INTO `cupones` (`NUMERO_CUPON`, `DESC_CUPON`, `FECHA_FIN`, `FECHA_INICIO`) VALUES
+('gBL3q', '20.0', '2020-10-10', '2020-07-10');
 
 -- --------------------------------------------------------
 
@@ -76,9 +98,16 @@ CREATE TABLE `reservas` (
   `DNI_PASAJERO` varchar(20) NOT NULL,
   `ID_VIAJE` int(11) NOT NULL,
   `ID_RESERVA` int(11) NOT NULL,
-  `NUMERO_CUPON` varchar(255) NOT NULL,
-  `COSTE_FINAL` int(11) NOT NULL
+  `NUMERO_CUPON` varchar(255) DEFAULT NULL,
+  `COSTE_FINAL` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reservas`
+--
+
+INSERT INTO `reservas` (`F_RESERVA`, `DNI_PASAJERO`, `ID_VIAJE`, `ID_RESERVA`, `NUMERO_CUPON`, `COSTE_FINAL`) VALUES
+('2020-02-10 14:56:00', '12345678Z', 11, 64, NULL, 40);
 
 -- --------------------------------------------------------
 
@@ -87,11 +116,18 @@ CREATE TABLE `reservas` (
 --
 
 CREATE TABLE `seguros` (
-  `EMPRESA` int(11) NOT NULL,
-  `TIPO` int(11) NOT NULL,
-  `DESCRIPCION` int(11) NOT NULL,
+  `EMPRESA` varchar(255) NOT NULL,
+  `TIPO` varchar(255) NOT NULL,
+  `DESCRIPCION` varchar(255) NOT NULL,
   `ID_SEGURO` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `seguros`
+--
+
+INSERT INTO `seguros` (`EMPRESA`, `TIPO`, `DESCRIPCION`, `ID_SEGURO`) VALUES
+('Mutuamadrid', 'Todo Riesgo', 'El mejor seguro de tu vida!', 2);
 
 -- --------------------------------------------------------
 
@@ -109,6 +145,15 @@ CREATE TABLE `usuarios` (
   `TIPO` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`DNI`, `NOMBRE`, `APELLIDOS`, `TELEFONO`, `EMAIL`, `PASSWORD`, `TIPO`) VALUES
+('12345678Z', 'Manu', 'Molina', 695874512, 'manu@gmail.com', 'manuel', 'Si'),
+('28983187J', 'Adrian', 'Gil Gamboa', 695529887, 'adrian@gmail.com', 'adrian', 'Si'),
+('5', 'Admin', 'Admin', 5, 'admin@gmail.com', 'admin', 'Admin');
+
 -- --------------------------------------------------------
 
 --
@@ -119,8 +164,15 @@ CREATE TABLE `valoraciones` (
   `ID_VALORACION` int(11) NOT NULL,
   `ID_RESERVA` int(11) NOT NULL,
   `PUNTUACION` int(11) NOT NULL,
-  `DESCRIPCION` varchar(255) NOT NULL
+  `DESCRIPCION` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `valoraciones`
+--
+
+INSERT INTO `valoraciones` (`ID_VALORACION`, `ID_RESERVA`, `PUNTUACION`, `DESCRIPCION`) VALUES
+(2, 64, 8, 'Buen viajecito');
 
 -- --------------------------------------------------------
 
@@ -139,6 +191,14 @@ CREATE TABLE `viajes` (
   `COSTE` float NOT NULL,
   `NUM_PASAJEROS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `viajes`
+--
+
+INSERT INTO `viajes` (`ID_VIAJE`, `ID_SEGURO`, `DNI_CONDUCTOR`, `HORA_SALIDA`, `HORA_LLEGADA`, `ORIGEN`, `DESTINO`, `COSTE`, `NUM_PASAJEROS`) VALUES
+(11, 2, '28983187J', '2020-02-10 14:56:00', '2020-02-10 14:56:00', 'Barcelona', 'Madrid', 40, 1),
+(12, 2, '12345678Z', '2021-08-10 14:56:00', '2021-08-10 19:56:00', 'Barcelona', 'UPO', 30, 4);
 
 --
 -- Índices para tablas volcadas
@@ -207,31 +267,31 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `anuncios`
 --
 ALTER TABLE `anuncios`
-  MODIFY `ID_ANUNCIO` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_ANUNCIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `ID_RESERVA` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_RESERVA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `seguros`
 --
 ALTER TABLE `seguros`
-  MODIFY `ID_SEGURO` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_SEGURO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `valoraciones`
 --
 ALTER TABLE `valoraciones`
-  MODIFY `ID_VALORACION` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_VALORACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  MODIFY `ID_VIAJE` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_VIAJE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
